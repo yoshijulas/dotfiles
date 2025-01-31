@@ -1,6 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
-  opts = {
+  config = {
     servers = {
       biome = {
         filetypes = {
