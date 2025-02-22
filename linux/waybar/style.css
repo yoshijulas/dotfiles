@@ -1,0 +1,67 @@
+@define-color base #24273a;
+@define-color text #cad3f5;
+@define-color rosewater #f4dbd6;
+
+* {
+  padding: 0px;
+  margin: 0px;
+  border-radius: 0px;
+  font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font Mono", Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  transition: background-color .3s ease-out;
+}
+
+window#waybar {
+  /* background-color: rgba(60, 60, 76, 0.1); */
+  background-color: transparent;
+  color: @text;
+}
+
+window {
+  font-weight: bold;
+}
+
+#workspaces button {
+  background-color: @base;
+  color: @text;
+}
+
+#workspaces button:hover {
+  background-color: @rosewater;
+  color: @base;
+}
+
+#workspaces button.active {
+  background-color: @rosewater;
+  color: @base;
+}
+
+#network {
+  min-width: 4.4rem;
+}
+
+#cpu {
+  min-width: 6rem;
+}
+
+.modules-left * {
+  padding: 0 1px;
+  margin: 0 2px;
+  font-weight: 900;
+}
+
+.modules-left>widget:first-child>#workspaces {
+  padding-left: 0px;
+}
+
+.modules-right * {
+  padding: 0 10px;
+  background-color: @base;
+  color: @text;
+}
+
+.modules-right *:hover {
+  background-color: @rosewater;
+  color: @base
+}
