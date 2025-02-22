@@ -10,23 +10,26 @@
     ~/.config:
       recursive: true
 
+# Windows-specific links
+- defaults:
+    link:
+      if: "ver"
 - link:
-    ~/.config/nvim:
-      path: nvim
-      if: '[ "$(uname)" = "Linux" ]'
-    ~/AppData/Local/nvim:
-      path: nvim
-      if: "ver"
-    ~/.config/lazygit:
-      path: lazygit
-      if: '[ "$(uname)" = "Linux" ]'
-    ~/AppData/Local/lazygit:
-      path: lazygit
-      if: "ver"
+    ~/AppData/Local/lazygit: lazygit
+    ~/AppData/Local/nvim: nvim
+    ~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1: windows/PowerShell/Microsoft.PowerShell_profile.ps1
 
-# - create:
-#     - ~/downloads
-#     - ~/.vim/undo-history
+# Linux-specific links
+- defaults:
+    link:
+      if: '[ "$(uname)" = "Linux" ]'
+- link:
+    ~/.config/nvim: nvim
+    ~/.config/lazygit: lazygit
+    ~/.config/waybar: linux/waybar
+    ~/.config/hypr: linux/hypr
+    ~/.config/swaync: linux/swaync
+    ~/.zshrc: linux/.zshrc
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
