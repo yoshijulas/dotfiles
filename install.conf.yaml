@@ -1,0 +1,22 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ["~"]
+
+- link:
+    ~/.nvim:
+      path: nvim
+      if: '[ "$(uname)" = "Linux" ]'
+
+- link:
+  ~/AppData/Local/nvim:
+    path: nvim
+    if: "ver"
+
+# - create:
+#     - ~/downloads
+#     - ~/.vim/undo-history
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
