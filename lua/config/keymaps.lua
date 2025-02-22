@@ -8,3 +8,6 @@ local map = vim.keymap.set
 map("n", "<leader>z", function()
   Snacks.bufdelete()
 end, { desc = "Delete Buffer" })
+
+map("n", "<S-Left>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
+map("n", "<S-Right>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
