@@ -5,14 +5,18 @@
 - clean: ["~"]
 
 - link:
-    ~/.nvim:
+    ~/.config/nvim:
       path: nvim
       if: '[ "$(uname)" = "Linux" ]'
-
-- link:
-  ~/AppData/Local/nvim:
-    path: nvim
-    if: "ver"
+    ~/AppData/Local/nvim:
+      path: nvim
+      if: "ver"
+    ~/.config/lazygit:
+      path: lazygit
+      if: '[ "$(uname)" = "Linux" ]'
+    ~/AppData/Local/lazygit:
+      path: lazygit
+      if: "ver"
 
 # - create:
 #     - ~/downloads
