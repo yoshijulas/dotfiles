@@ -13,6 +13,7 @@
       "playing": "",
       "paused": ""
     },
+    // "ignored-players": ["firefox"],
     "dynamic-order": [
       "title",
       "artist",
@@ -135,5 +136,8 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
+  },
+  "tray": {
+    "spacing": 0
   }
 }

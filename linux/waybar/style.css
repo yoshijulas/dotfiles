@@ -65,3 +65,13 @@ window {
   background-color: @rosewater;
   color: @base
 }
+
+#tray {
+  padding: 0;
+
+}
+
+/* #tray *:hover { */
+/*   background-color: @rosewater; */
+/*   color: @base; */
+/* } */
