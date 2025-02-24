@@ -82,6 +82,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
+# Already done in arch???
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
@@ -106,13 +107,19 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 
+# Set vi keybind
+# bindkey -v
+
+# binds/alias
 alias la="eza --icons=always -l --all --color=always $1"
 alias ls="eza --icons=always --color=always $1"
 alias cat="bat $1"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Set asdf
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# Set default editor as nvim
 export EDITOR=nvim
 
 # pnpm
