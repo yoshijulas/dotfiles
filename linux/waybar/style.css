@@ -1,21 +1,23 @@
-@define-color base #24273a;
-@define-color text #cad3f5;
+@define-color black-base #24273a;
+@define-color white-text #cad3f5;
 @define-color rosewater #f4dbd6;
+@define-color red #ed8796;
 
 * {
   padding: 0px;
   margin: 0px;
   border-radius: 0px;
-  font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font Mono", Roboto,
-    Helvetica, Arial, sans-serif;
+  font-family:
+    "JetBrainsMono Nerd Font", "FiraCode Nerd Font Mono", Roboto, Helvetica,
+    Arial, sans-serif;
   font-size: 14px;
-  transition: background-color .3s ease-out;
+  transition: background-color 0.3s ease-out;
 }
 
 window#waybar {
   /* background-color: rgba(60, 60, 76, 0.1); */
   background-color: transparent;
-  color: @text;
+  color: @white-text;
 }
 
 window {
@@ -23,18 +25,39 @@ window {
 }
 
 #workspaces button {
-  background-color: @base;
-  color: @text;
+  background-color: @black-base;
+  color: @white-text;
 }
 
 #workspaces button:hover {
   background-color: @rosewater;
-  color: @base;
+  color: @black-base;
 }
 
 #workspaces button.active {
   background-color: @rosewater;
-  color: @base;
+  color: @black-base;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+  color: @black-base;
+  animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    background-color: @black-base;
+    color: @white-text;
+  }
+  50% {
+    color: @black-base;
+    background-color: @red;
+  }
+  100% {
+    color: @white-text;
+    background-color: @black-base;
+  }
 }
 
 #network {
@@ -51,27 +74,26 @@ window {
   font-weight: 900;
 }
 
-.modules-left>widget:first-child>#workspaces {
+.modules-left > widget:first-child > #workspaces {
   padding-left: 0px;
 }
 
 .modules-right * {
   padding: 0 10px;
-  background-color: @base;
-  color: @text;
+  background-color: @black-base;
+  color: @white-text;
 }
 
 .modules-right *:hover {
   background-color: @rosewater;
-  color: @base
+  color: @black-base;
 }
 
 #tray {
   padding: 0;
-
 }
 
 /* #tray *:hover { */
 /*   background-color: @rosewater; */
-/*   color: @base; */
+/*   color: @black-base; */
 /* } */
