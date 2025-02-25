@@ -1,4 +1,17 @@
 {
+  "hyprland/workspaces": {
+    "format": " {icon} ",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "󰈹",
+      "4": "󰝚",
+      "5": ""
+    },
+    "default": "{name}",
+    "sort-by-number": true
+  },
   "hyprland/window": {
     "rewrite": {
       "(.*) — Zen Browser": "$1"
