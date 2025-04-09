@@ -114,6 +114,15 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias la="eza --icons=always -l --all --color=always $1"
 alias ls="eza --icons=always --color=always $1"
 alias cat="bat $1"
+
+# Bun
+alias ba="bun add"
+alias bi="bun install"
+alias bu="bun uninstall"
+alias brd="bun run dev"
+alias bv="bun vite"
+# alias bpm="bun pm"
+
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
@@ -140,3 +149,12 @@ function y() {
 	rm -f -- "$tmp"
 }
 # End of yazi shell wrapper
+
+# Zoxide init
+eval "$(zoxide init zsh)"
+# End of Zoxide init
+
+# nodemon
+export PATH="/home/yoshi/.bun/bin:$PATH"
+# end nodemon
+
