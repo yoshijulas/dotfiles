@@ -30,6 +30,10 @@ window {
 }
 
 #workspaces button:hover {
+  box-shadow: none; /* Remove predefined box-shadow */
+  text-shadow: none; /* Remove predefined text-shadow */
+  background: none; /* Remove predefined background color (depends on GTK style) */
+  transition: none; /* Disable predefined animations */
   background-color: @rosewater;
   color: @black-base;
 }
