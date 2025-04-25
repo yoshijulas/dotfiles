@@ -15,7 +15,8 @@
   "hyprland/window": {
     "rewrite": {
       "(.*) — Zen Browser": "$1",
-      "(.*) — Ablaze Floorp": "$1"
+      "(.*) — Ablaze Floorp": "$1",
+      "(.*) — Firefox Nightly": "$1"
     },
     "separate-outputs": true,
     "max-length": 80
