@@ -64,6 +64,9 @@ Set-Alias la Invoke-Eza-La
 
 # Replace sudo (windows developer) -> gsudo  which works better
 Set-Alias sudo gsudo
+# Add sudo !!
+Import-Module 'gsudoModule'
+
 
 # Replace Cat -> Bat
 
@@ -76,3 +79,7 @@ function Invoke-Bat {
 }
 
 Set-Alias Cat Invoke-Bat
+
+# Set fnm
+fnm env --use-on-cd | Out-String | Invoke-Expression
+
