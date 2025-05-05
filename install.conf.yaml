@@ -18,6 +18,7 @@
     ~/AppData/Local/lazygit: lazygit
     ~/AppData/Local/nvim: nvim
     ~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1: windows/PowerShell/Microsoft.PowerShell_profile.ps1
+    ~/AppData/Roaming/yazi: yazi
 
 # Linux-specific links
 - defaults:
@@ -30,6 +31,7 @@
     ~/.config/hypr: linux/hypr
     ~/.config/swaync: linux/swaync
     ~/.zshrc: linux/.zshrc
+    ~/.config/yazi: yazi
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
