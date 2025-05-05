@@ -6,8 +6,8 @@
       "1": "",
       "2": "",
       "3": "󰈹",
-      "4": "󰝚",
-      "5": ""
+      "8": "",
+      "9": "󰝚"
     },
     "default": "{name}",
     "sort-by-number": true
@@ -144,6 +144,6 @@
     "escape": true
   },
   "tray": {
-    "spacing": 0
+    "spacing": 5
   }
 }

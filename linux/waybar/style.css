@@ -33,7 +33,6 @@ window {
   box-shadow: none; /* Remove predefined box-shadow */
   text-shadow: none; /* Remove predefined text-shadow */
   background: none; /* Remove predefined background color (depends on GTK style) */
-  transition: none; /* Disable predefined animations */
   background-color: @rosewater;
   color: @black-base;
 }
@@ -81,22 +80,41 @@ window {
   padding-left: 0px;
 }
 
-.modules-right * {
-  padding: 0 10px;
+#mpris,
+#bluetooth,
+#wireplumber,
+#disk,
+#network,
+#cpu,
+#temperature,
+#memory,
+#clock,
+#custom-notification,
+#tray {
+  padding: 0px 10px;
   background-color: @black-base;
   color: @white-text;
 }
 
-.modules-right *:hover {
+#mpris:hover,
+#bluetooth:hover,
+#wireplumber:hover,
+#disk:hover,
+#network:hover,
+#cpu:hover,
+#temperature:hover,
+#memory:hover,
+#clock:hover,
+#custom-notification:hover,
+#tray *:hover {
   background-color: @rosewater;
   color: @black-base;
 }
 
 #tray {
-  padding: 0;
+  padding: 0px;
 }
 
-/* #tray *:hover { */
-/*   background-color: @rosewater; */
-/*   color: @black-base; */
-/* } */
+#tray image {
+  margin: 0px 10px;
+}
