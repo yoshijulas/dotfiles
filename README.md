@@ -17,6 +17,7 @@
 
 - nvim
 - lazygit
+- yazi
 
 ## Install
 
