@@ -14,11 +14,12 @@
 - defaults:
     link:
       if: "ver"
+      create: true
 - link:
     ~/AppData/Local/lazygit: lazygit
     ~/AppData/Local/nvim: nvim
     ~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1: windows/PowerShell/Microsoft.PowerShell_profile.ps1
-    ~/AppData/Roaming/yazi: yazi
+    ~/AppData/Roaming/yazi/config/: yazi
 
 # Linux-specific links
 - defaults:
