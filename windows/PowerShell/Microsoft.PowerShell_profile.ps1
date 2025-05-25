@@ -83,3 +83,13 @@ Set-Alias Cat Invoke-Bat
 # Set fnm
 fnm env --use-on-cd | Out-String | Invoke-Expression
 
+# Set Yazi
+function y {
+    $tmp = [System.IO.Path]::GetTempFileName()
+    yazi $args --cwd-file="$tmp"
+    $cwd = Get-Content -Path $tmp -Encoding UTF8
+    if (-not [String]::IsNullOrEmpty($cwd) -and $cwd -ne $PWD.Path) {
+        Set-Location -LiteralPath ([System.IO.Path]::GetFullPath($cwd))
+    }
+    Remove-Item -Path $tmp
+}
