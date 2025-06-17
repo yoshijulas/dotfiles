@@ -11,6 +11,7 @@
     "mpris",
     "bluetooth",
     "wireplumber",
+    "pulseaudio",
     "disk",
     "network",
     "cpu",
