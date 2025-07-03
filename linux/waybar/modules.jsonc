@@ -6,6 +6,7 @@
       "1": "",
       "2": "",
       "3": "󰈹",
+      "7": "",
       "8": "",
       "9": "󰝚"
     },
@@ -21,6 +22,7 @@
     "separate-outputs": true,
     "max-length": 80
   },
+
   "mpris": {
     "interval": 1,
     "format": "{status_icon} {dynamic}",
@@ -56,7 +58,8 @@
     "format": "{format_source}",
     "format-source": "",
     "format-source-muted": "",
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
+    "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
   },
   "wireplumber": {
     "format": "{icon} {volume}%",
@@ -150,6 +153,17 @@
     "escape": true
   },
   "tray": {
-    "spacing": 5
+    "spacing": 4
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
   }
 }
