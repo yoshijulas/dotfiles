@@ -71,9 +71,7 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git
-  asdf
-  )
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,26 +106,16 @@ alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 
 # Set vi keybind
-# bindkey -v
+bindkey -v
 
 # binds/alias
 alias la="eza --icons=always -l --all --color=always $1"
 alias ls="eza --icons=always --color=always $1"
 alias cat="bat $1"
 
-# Bun
-alias ba="bun add"
-alias bi="bun install"
-alias bu="bun uninstall"
-alias brd="bun run dev"
-alias bv="bun vite"
-# alias bpm="bun pm"
-
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Set asdf
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 # Set default editor as nvim
 export EDITOR=nvim
 
@@ -154,7 +142,6 @@ function y() {
 eval "$(zoxide init zsh)"
 # End of Zoxide init
 
-# nodemon
-export PATH="/home/yoshi/.bun/bin:$PATH"
-# end nodemon
-
+# Mise (Dev Manager)
+eval "$(mise activate zsh)"
+# End Mise
