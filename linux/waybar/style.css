@@ -76,8 +76,8 @@ window {
   margin: 0px 2px;
 }
 
-.modules-left > widget:first-child > #workspaces {
-  padding-left: 0px;
+.modules-right {
+  margin-right: 5px;
 }
 
 #mpris,
@@ -91,7 +91,8 @@ window {
 #memory,
 #clock,
 #custom-notification,
-#tray {
+#tray,
+#power-profiles-daemon {
   padding: 0px 10px;
   background-color: @black-base;
   color: @white-text;
@@ -108,15 +109,40 @@ window {
 #memory:hover,
 #clock:hover,
 #custom-notification:hover,
-#tray *:hover {
+#power-profiles-daemon:hover {
   background-color: @rosewater;
   color: @black-base;
 }
 
+/* Tray is the box that holds the icons not the icons itself */
 #tray {
   padding: 0px;
+  background-color: transparent;
 }
 
+/* Menu is the menu that opens on click */
+#tray menu {
+  background-color: @black-base;
+  color: @white-text;
+}
+
+#tray menu *:hover {
+  background-color: @rosewater;
+  color: @black-base;
+}
+
+/* Image is the icon (logo) */
 #tray image {
-  margin: 0px 10px;
+  padding: 0 10px;
+}
+
+/* Style the container for EACH individual icon (the widget) */
+#tray widget {
+  background-color: @black-base; /* The default background for each icon */
+}
+
+/* Apply the hover effect directly to the widget */
+#tray widget:hover {
+  background-color: @rosewater;
+  color: @black-base;
 }
