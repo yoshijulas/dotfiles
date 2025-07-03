@@ -20,6 +20,38 @@
     ~/AppData/Local/nvim: nvim
     ~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1: windows/PowerShell/Microsoft.PowerShell_profile.ps1
     ~/AppData/Roaming/yazi/config/: yazi
+- shell:
+    # 1. Add Scoop buckets (run these after Scoop should be installed and in PATH)
+    - command: "scoop bucket add versions"
+      description: "Add Scoop 'versions' bucket"
+    - command: "scoop bucket add main"
+      description: "Ensure Scoop 'main' bucket is added"
+    - command: "scoop bucket add nerd-fonts"
+      description: "Add Scoop 'nerd-fonts' bucket"
+    - command: "scoop bucket add extras"
+      description: "Add Scoop 'extras' bucket"
+
+    # 2. Install Scoop packages
+    - command: "scoop install versions/neovim-nightly"
+      description: "Install neovim-nightly"
+    - command: "scoop install main/eza"
+      description: "Install eza"
+    - command: "scoop install main/gsudo"
+      description: "Install gsudo"
+    - command: "scoop install nerd-fonts/JetBrainsMono-NF"
+      description: "Install JetBrainsMono Nerd Font"
+    - command: "scoop install extras/sfsu"
+      description: "Install sfsu"
+    - command: "scoop install main/starship"
+      description: "Install starship"
+    - command: "scoop install main/zig"
+      description: "Install zig"
+    - command: "scoop install extras/lazygit"
+      description: "Install lazygit"
+    - command: "scoop install extras/mpv-git"
+      description: "Install mpv-git"
+    - command: "scoop install extras/trafficmonitor"
+      description: "Install trafficmonitor"
 
 # Linux-specific links
 - defaults:
