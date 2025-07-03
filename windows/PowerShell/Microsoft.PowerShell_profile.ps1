@@ -80,9 +80,6 @@ function Invoke-Bat {
 
 Set-Alias Cat Invoke-Bat
 
-# Set fnm
-fnm env --use-on-cd | Out-String | Invoke-Expression
-
 # Set Yazi
 function y {
     $tmp = [System.IO.Path]::GetTempFileName()
@@ -93,3 +90,6 @@ function y {
     }
     Remove-Item -Path $tmp
 }
+
+# Set Mise 
+mise activate pwsh | Out-String | Invoke-Expression
