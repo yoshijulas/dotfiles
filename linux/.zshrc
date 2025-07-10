@@ -106,7 +106,7 @@ alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 
 # Set vi keybind
-bindkey -v
+# bindkey -v
 
 # binds/alias
 alias la="eza --icons=always -l --all --color=always $1"
@@ -137,6 +137,10 @@ function y() {
 	rm -f -- "$tmp"
 }
 # End of yazi shell wrapper
+
+# Ni with bun
+export PATH="/home/yoshi/.bun/bin:$PATH"
+# End of Ni with bun
 
 # Zoxide init
 eval "$(zoxide init zsh)"
