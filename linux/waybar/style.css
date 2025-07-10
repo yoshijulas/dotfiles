@@ -24,6 +24,16 @@ window {
   font-weight: bold;
 }
 
+#window {
+  background-color: @black-base;
+  padding: 0px 10px;
+  border-radius: 5px;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
 #workspaces button {
   background-color: @black-base;
   color: @white-text;
