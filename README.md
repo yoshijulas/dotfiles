@@ -27,7 +27,7 @@
 - [bat](https://github.com/sharkdp/bat)
 - [eza](https://github.com/eza-community/eza)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
-- [mise](https://github.com/mikefarah/mise)
+- [mise](https://github.com/jdx/mise)
 
 ## Install
 
