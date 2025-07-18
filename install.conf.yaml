@@ -65,6 +65,7 @@
     ~/.config/swaync: linux/swaync
     ~/.zshrc: linux/.zshrc
     ~/.config/yazi: yazi
+    ~/.config/MangoHud: linux/MangoHud
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
