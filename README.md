@@ -4,20 +4,30 @@
 
 ### Linux
 
-- hyprland/hyprlock
-- swaync
-- waybar
-- zsh
+- [hyprland](https://github.com/hyprwm/Hyprland)/[hyprlock](https://github.com/hyprwm/hyprlock/)
+- [swaync](https://github.com/ErikReider/SwayNotificationCenter)
+- [waybar](https://github.com/Alexays/Waybar)
+- [omzsh](https://github.com/ohmyzsh/ohmyzsh)
+- [MangoHud](https://github.com/flightlessmango/MangoHud)
 
 ### Windows
 
-- Powershell
+- [Powershell](https://github.com/PowerShell/PowerShell)
 
 ### Both
 
-- nvim
-- lazygit
-- yazi
+- [nvim](https://github.com/neovim/neovim)
+  -- [lazyvim](https://github.com/LazyVim/LazyVim)
+- [lazygit](https://github.com/jesseduffield/lazygit)
+- [yazi](https://github.com/sxyazi/yazi)
+- [mise](https://github.com/mikefarah/mise)
+
+### Utilities
+
+- [bat](https://github.com/sharkdp/bat)
+- [eza](https://github.com/eza-community/eza)
+- [zoxide](https://github.com/ajeetdsouza/zoxide)
+- [mise](https://github.com/mikefarah/mise)
 
 ## Install
 
