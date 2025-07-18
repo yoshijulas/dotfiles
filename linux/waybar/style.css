@@ -39,6 +39,12 @@ window#waybar.empty #window {
   color: @white-text;
 }
 
+#custom-window {
+  background-color: @black-base;
+  padding: 0px 10px;
+  border-radius: 5px;
+}
+
 #workspaces button:hover {
   box-shadow: none; /* Remove predefined box-shadow */
   text-shadow: none; /* Remove predefined text-shadow */
