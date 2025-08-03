@@ -10,7 +10,7 @@ update_output() {
 
   mpris_title=$(timeout 0.5 playerctl metadata --format "{{ title }}" 2>/dev/null)
 
-  if [ -n "$mpris_title" ] && [[ "$rewritten_title" == *"$mpris_title"* ]] || [[ "$rewritten_title" == "null" ]]; then
+  if [ -n "$mpris_title" ] && [[ "${rewritten_title,,}" == *"${mpris_title,,}"* ]] || [[ "$rewritten_title" == "null" ]]; then
     echo "" # Output empty string to hide
   else
     max_length=80

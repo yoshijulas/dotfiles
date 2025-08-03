@@ -23,10 +23,9 @@
     "max-length": 80
   },
   "custom/window": {
-    // "format": "{}",
+    "max-length": 80,
     "exec": "bash ~/.config/waybar/waybar-mpris.sh",
-    // "interval": 1, // Updates every second
-    "separate-outputs": true, // This setting can be kept here
+    "separate-outputs": true,
     "tooltip": false
   },
 
