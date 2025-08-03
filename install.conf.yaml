@@ -66,6 +66,8 @@
     ~/.zshrc: linux/.zshrc
     ~/.config/yazi: yazi
     ~/.config/MangoHud: linux/MangoHud
+    ~/.config/mimeapps.list: linux/mimeapps.list
+    ~/.config/feh/themes: linux/feh/themes
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
