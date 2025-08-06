@@ -153,3 +153,7 @@ eval "$(zoxide init zsh)"
 # Mise (Dev Manager)
 eval "$(mise activate zsh)"
 # End Mise
+
+# Starship
+eval "$(starship init zsh)"
+# End Starship
