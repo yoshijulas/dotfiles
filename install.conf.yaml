@@ -41,6 +41,7 @@
     ~/.config/MangoHud: linux/MangoHud
     ~/.config/mimeapps.list: linux/mimeapps.list
     ~/.config/feh/themes: linux/feh/themes
+    ~/.config/starship.toml: starship/starship.toml
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
