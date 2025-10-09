@@ -42,6 +42,8 @@
     ~/.config/mimeapps.list: linux/mimeapps.list
     ~/.config/feh/themes: linux/feh/themes
     ~/.config/starship.toml: starship/starship.toml
+    ~/.config/xkb/symbols/latam_prog: linux/keyboard/latam_prog
+    ~/.config/zathura: linux/zathura
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
