@@ -14,7 +14,7 @@ x-scheme-handler/discord=vesktop.desktop
 x-scheme-handler/tg=userapp-AyuGram Desktop-F44272.desktop
 x-scheme-handler/tonsite=userapp-AyuGram Desktop-FRX272.desktop
 application/x-extension-pdf=mupdf.desktop
-application/pdf=mupdf.desktop
+application/pdf=org.pwmt.zathura.desktop
 #Images
 image/bmp=feh.desktop
 image/gif=feh.desktop
@@ -35,6 +35,7 @@ image/x-tga=feh.desktop
 image/x-xbitmap=feh.desktop
 image/heic=feh.desktop
 #end of Images
+inode/directory=yazi.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox-nightly.desktop;zen.desktop;userapp-Floorp-8LBK42.desktop;
