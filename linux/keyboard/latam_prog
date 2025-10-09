@@ -1,0 +1,16 @@
+default partial alphanumeric_keys
+xkb_symbols "prog" {
+
+    include "latam(basic)"
+    name[Group1]= "Latin American (Programming)";
+
+    //    Original: key <AD11> {[ dead_acute, dead_diaeresis, ... ]};
+    key <AD11> { [      acute,   diaeresis,  dead_diaeresis, dead_abovering ] };
+
+    //    Original: key <AC11> {[ braceleft, bracketleft, dead_circumflex, ... ]};
+    key <AC11> { [   braceleft, bracketleft, asciicircum,      braceleft ] };
+
+    //    Original: key <BKSL> {[ braceright, bracketright, dead_grave, ... ]};
+    key <BKSL> { [  braceright, bracketright,       grave,     braceright ] };
+
+};
