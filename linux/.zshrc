@@ -71,7 +71,7 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git poetry)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -157,3 +157,8 @@ eval "$(mise activate zsh)"
 # Starship
 eval "$(starship init zsh)"
 # End Starship
+
+# Shortcuts for umounting
+alias u-seagate='systemd-mount --unmount /media/seagate'
+alias u-adata='systemd-mount --unmount /media/adata'
+# End of shortcuts for umounting
