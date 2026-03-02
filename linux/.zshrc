@@ -162,3 +162,7 @@ eval "$(starship init zsh)"
 alias u-seagate='systemd-mount --unmount /media/seagate'
 alias u-adata='systemd-mount --unmount /media/adata'
 # End of shortcuts for umounting
+
+# Add local bin to path
+export PATH="$HOME/.local/bin:$PATH"
+# End of adding local bin to path
