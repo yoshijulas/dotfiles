@@ -22,7 +22,9 @@ update_output() {
 # --- Event Handling Loop ---
 
 # Find the Hyprland event socket dynamically using the correct file type 's' for socket.
-HYPR_SOCKET=$(find /run/user/"$(id -u)"/hypr/ -type s -name ".socket2.sock" 2>/dev/null)
+# HYPR_SOCKET=$(find /run/user/"$(id -u)"/hypr/ -type s -name ".socket2.sock" 2>/dev/null)
+# Sort by time to find the most recently created socket
+HYPR_SOCKET=$(find /run/user/"$(id -u)"/hypr/ -type s -name ".socket2.sock" -printf "%T@ %p\n" | sort -n | tail -1 | cut -d' ' -f2-)
 
 # Check if the socket was found. If not, exit gracefully.
 if [ -z "$HYPR_SOCKET" ]; then
