@@ -44,6 +44,7 @@
     ~/.config/starship.toml: starship/starship.toml
     ~/.config/xkb/symbols/latam_prog: linux/keyboard/latam_prog
     ~/.config/zathura: linux/zathura
+    ~/.config/rofi: linux/rofi
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
