@@ -38,7 +38,8 @@
       "paused": ""
     },
     // "ignored-players": ["firefox"],
-    "dynamic-order": ["title", "artist", "album", "position", "length"],
+    // "dynamic-order": ["title", "artist", "album", "position", "length"],
+    "dynamic-order": ["title", "artist", "position", "length"],
     "dynamic-importance-order": [
       "title",
       "artist",
