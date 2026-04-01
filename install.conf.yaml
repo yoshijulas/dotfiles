@@ -22,6 +22,7 @@
     ~/AppData/Local/nvim: nvim
     ~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1: windows/PowerShell/Microsoft.PowerShell_profile.ps1
     ~/AppData/Roaming/yazi/config/: yazi
+    ~/AppData/Roaming/topgrade.toml: topgrade.toml
 - shell:
     - command: 'powershell -ExecutionPolicy Bypass -File "windows/install-scoop-packages.ps1"'
       description: "Installing Windows packages via Scoop"
@@ -45,6 +46,7 @@
     ~/.config/xkb/symbols/latam_prog: linux/keyboard/latam_prog
     ~/.config/zathura: linux/zathura
     ~/.config/rofi: linux/rofi
+    ~/.config/topgrade.toml: topgrade.toml
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
