@@ -47,6 +47,9 @@
     ~/.config/zathura: linux/zathura
     ~/.config/rofi: linux/rofi
     ~/.config/topgrade.toml: topgrade.toml
+    ~/.config/foot: linux/foot
+    ~/.config/niri: linux/niri
+    ~/.config/btop: linux/btop
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
