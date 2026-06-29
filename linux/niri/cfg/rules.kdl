@@ -1,0 +1,90 @@
+    window-rule {
+        geometry-corner-radius 20 // Set every window radius to 20
+        clip-to-geometry true
+    }
+
+     // if you use steam you will probably like these
+    window-rule {
+        match app-id="steam"
+        exclude title=r#"^[Ss]team$"#
+        open-floating true
+    }
+
+    window-rule {
+      match app-id="discord"
+      match app-id="com.github.th_ch.youtube_music"
+      open-on-workspace "8"
+    }
+
+    window-rule {
+      match app-id="org.mozilla.Thunderbird"
+      open-on-workspace "9"
+    }
+
+    window-rule {
+      match app-id="firefox-nightly"
+      open-on-workspace "3"
+    }
+
+    window-rule { 
+      geometry-corner-radius 8
+    }
+
+    window-rule {
+      match title="(?i)picture.in.picture"
+      open-focused false
+      open-floating true
+    
+      default-column-width { proportion 0.285; }
+      default-window-height { proportion 0.256; }
+
+      default-floating-position x=20 y=20 relative-to="bottom-right"
+    }
+
+    window-rule {
+       match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+       default-floating-position x=10 y=10 relative-to="bottom-right"
+       open-focused false
+    }
+
+    window-rule {
+        match title="AlecaFrame"
+        open-floating true
+    }
+
+    // Fixes virtualbox from opening only half the screen or the default column width
+    window-rule {
+      match app-id="(?i)virtualbox(vm| machine)" 
+      exclude title=r#"(?i)^(close virtual machine|.*:\s*(restoring|starting|saving|powering\s+off)\s*virtual machine)$"#
+      open-maximized true // Optional
+      default-column-width { proportion 1.0; }
+    }
+
+    // Indicate screencasted windows with red colors.
+    window-rule {
+      match is-window-cast-target=true
+
+      focus-ring {
+        width 2
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+      }
+
+      border {
+        inactive-color "#7d0d2d"
+      }
+
+      shadow {
+        color "#7d0d2d70"
+      }
+
+      tab-indicator {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+      }
+    }
+
+    layer-rule {
+        match namespace="^noctalia-wallpaper*"
+        place-within-backdrop true
+    }
