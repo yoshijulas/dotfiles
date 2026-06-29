@@ -176,3 +176,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export XDG_MENU_PREFIX=arch-
 # also maybe this is needed kbuildsycoca6 --noincremental
 # End
+
+# Pacdiff with nvim
+alias pacdiff='DIFFPROG="nvim -d" pacdiff -s'
+# end
