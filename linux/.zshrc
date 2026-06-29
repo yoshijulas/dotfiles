@@ -166,3 +166,13 @@ alias u-adata='systemd-mount --unmount /media/adata'
 # Add local bin to path
 export PATH="$HOME/.local/bin:$PATH"
 # End of adding local bin to path
+
+
+# Fix for java?
+export _JAVA_AWT_WM_NONREPARENTING=1
+# End
+
+# Fix dolphin not having open with
+export XDG_MENU_PREFIX=arch-
+# also maybe this is needed kbuildsycoca6 --noincremental
+# End
