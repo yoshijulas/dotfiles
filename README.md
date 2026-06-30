@@ -4,6 +4,17 @@
 
 ### Linux
 
+### New
+
+- [Niri](https://github.com/niri-wm/niri)
+- [Noctalia](https://github.com/noctalia-dev/noctalia)
+- [MangoHud](https://github.com/flightlessmango/MangoHud)
+- [omzsh](https://github.com/ohmyzsh/ohmyzsh)
+- [btop](https://github.com/aristocratos/btop)
+- [foot](https://codeberg.org/dnkl/foot)
+
+## old
+
 - [hyprland](https://github.com/hyprwm/Hyprland)/[hyprlock](https://github.com/hyprwm/hyprlock/)
 - [swaync](https://github.com/ErikReider/SwayNotificationCenter)
 - [waybar](https://github.com/Alexays/Waybar)
@@ -21,6 +32,8 @@
 - [lazygit](https://github.com/jesseduffield/lazygit)
 - [yazi](https://github.com/sxyazi/yazi)
 - [mise](https://github.com/mikefarah/mise)
+- [Starship](https://github.com/starship/starship)
+- [topgrade](https://github.com/topgrade-rs/topgrade)
 
 ### Utilities
 
