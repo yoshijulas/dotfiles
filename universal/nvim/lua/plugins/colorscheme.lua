@@ -1,6 +1,7 @@
 return {
   {
     "sainnhe/everforest",
+    lazy = true,
     name = "everforest",
     priority = 1000,
     init = function()
@@ -13,7 +14,7 @@ return {
   },
   {
     "sainnhe/sonokai",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     init = function()
       -- vim.g.sonokai_style = "maia" -- Green
@@ -22,12 +23,17 @@ return {
       vim.g.sonokai_enable_italic = 1
     end,
   },
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    lazy = true,
+    priority = 1000,
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "catppuccin-macchiato",
       colorscheme = "everforest",
+      -- colorscheme = "catppuccin-macchiato",
       -- colorscheme = "sonokai",
     },
   },
