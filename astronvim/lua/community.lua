@@ -17,4 +17,5 @@ return {
   { import = "astrocommunity.motion.mini-move" },
   { import = "astrocommunity.editing-support.mini-ai" },
   { import = "astrocommunity.editing-support.nvim-treesitter-context" },
+  { import = "astrocommunity.file-explorer.oil-nvim" },
 }
