@@ -7,4 +7,5 @@
     spawn-at-startup "pear-desktop"
     spawn-at-startup "thunderbird"
     spawn-at-startup "firefox-nightly"
+    spawn-sh-at-startup "kbuildsycoca6 --noincremental"
 
