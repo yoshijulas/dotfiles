@@ -12,7 +12,7 @@
 
     window-rule {
       match app-id="discord"
-      match app-id="com.github.th_ch.youtube_music"
+      match app-id="com.github.th-ch.youtube-music"
       open-on-workspace "8"
     }
 
