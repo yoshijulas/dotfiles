@@ -180,3 +180,9 @@ export XDG_MENU_PREFIX=arch-
 # Pacdiff with nvim
 alias pacdiff='DIFFPROG="nvim -d" pacdiff -s'
 # end
+
+# Custom Nvim settings
+alias lazyvim="NVIM_APPNAME=lazyvim nvim"
+alias astronvim="NVIM_APPNAME=astronvim nvim"
+# alias cleannvim="NVIM_APPNAME=cleannvim nvim"
+# end
