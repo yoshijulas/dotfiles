@@ -18,11 +18,13 @@
     shell:
       if: "ver"
 - link:
+    ~/.config/starship.toml: universal/starship/starship.toml
     ~/AppData/Local/lazygit: universal/lazygit
     ~/AppData/Local/nvim: universal/nvim
-    ~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1: windows/PowerShell/Microsoft.PowerShell_profile.ps1
-    ~/AppData/Roaming/yazi/config/: universal/yazi
+    ~/AppData/Local/rio: universal/rio
     ~/AppData/Roaming/topgrade.toml: universal/topgrade.toml
+    ~/AppData/Roaming/yazi/config: universal/yazi
+    ~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1: windows/PowerShell/Microsoft.PowerShell_profile.ps1
 - shell:
     - command: 'powershell -ExecutionPolicy Bypass -File "windows/install-scoop-packages.ps1"'
       description: "Installing Windows packages via Scoop"
@@ -32,24 +34,26 @@
     link:
       if: '[ "$(uname)" = "Linux" ]'
 - link:
-    ~/.config/nvim: universal/nvim
+    ~/.config/btop: linux/btop
+    ~/.config/feh/themes: linux/feh/themes
+    ~/.config/foot: linux/foot
     ~/.config/lazygit: universal/lazygit
-    ~/.config/waybar: linux/waybar
-    ~/.config/hypr: linux/hypr
-    ~/.config/swaync: linux/swaync
-    ~/.zshrc: linux/.zshrc
-    ~/.config/yazi: universal/yazi
     ~/.config/MangoHud: linux/MangoHud
     ~/.config/mimeapps.list: linux/mimeapps.list
-    ~/.config/feh/themes: linux/feh/themes
-    ~/.config/starship.toml: universal/starship/starship.toml
-    ~/.config/xkb/symbols/latam_prog: linux/keyboard/latam_prog
-    ~/.config/zathura: linux/zathura
-    ~/.config/rofi: linux/rofi
-    ~/.config/topgrade.toml: universal/topgrade.toml
-    ~/.config/foot: linux/foot
     ~/.config/niri: linux/niri
-    ~/.config/btop: linux/btop
+    ~/.config/nvim: universal/nvim
+    ~/.config/rio: universal/rio
+    ~/.config/starship.toml: universal/starship/starship.toml
+    ~/.config/topgrade.toml: universal/topgrade.toml
+    ~/.config/yazi: universal/yazi
+    ~/.config/zathura: linux/zathura
+    ~/.zshrc: linux/.zshrc
+    # Not used anymore
+    # ~/.config/hypr: linux/hypr
+    # ~/.config/rofi: linux/rofi
+    # ~/.config/swaync: linux/swaync
+    # ~/.config/waybar: linux/waybar
+    # ~/.config/xkb/symbols/latam_prog: linux/keyboard/latam_prog
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
