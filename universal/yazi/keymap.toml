@@ -1,0 +1,27 @@
+[[mgr.prepend_keymap]]
+on   = [",", "z"]
+run  = ["sort size --reverse=no --dir-first=no", "linemode size"]
+desc = "Sort by size (merged)"
+[[mgr.prepend_keymap]]
+on   = [",", "Z"]
+run  = ["sort size --reverse=yes --dir-first=no", "linemode size"]
+desc = "Sort by size (reverse merged)"
+[[mgr.prepend_keymap]]
+on   = [",", "s"]
+run  = ["sort size --reverse=no --dir-first=yes", "linemode size"]
+desc = "Sort by size"
+[[mgr.prepend_keymap]]
+on   = [",", "S"]
+run  = ["sort size --reverse=yes --dir-first=yes", "linemode size"]
+desc = "Sort by size (reverse)"
+
+#diff.yazi
+[[mgr.prepend_keymap]]
+on   = "<C-d>"
+run  = "plugin diff"
+desc = "Diff the selected with the hovered file"
+
+#mount.yazi
+[[mgr.prepend_keymap]]
+on  = "M"
+run = "plugin mount"
