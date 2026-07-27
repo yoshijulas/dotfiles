@@ -1,0 +1,34 @@
+theme = "catppuccin-macchiato"
+copy-on-select = true
+line-height = 1.2
+
+[fonts]
+size = 16.0
+family = "JetBrainsMono Nerd Font"
+use-drawable-chars = true
+hinting = true
+
+[fonts.regular]
+style = "Normal"
+weight = 400
+
+[fonts.bold]
+style = "Bold"
+weight = 700
+
+[fonts.italic]
+style = "Italic"
+weight = 400
+
+[fonts.bold-italic]
+style = "Bold Italic"
+weight = 700
+
+[editor]
+program = "nvim"
+args = []
+
+
+[platform]
+# Shell is completely replaced on Windows
+windows.shell = { program = "pwsh", args = ["-l"] }
