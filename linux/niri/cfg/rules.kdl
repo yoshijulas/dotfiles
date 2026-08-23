@@ -34,8 +34,7 @@
       match title="(?i)picture.in.picture"
       open-focused false
       open-floating true
-      //HACK: https://github.com/niri-wm/niri/pull/4092
-      focus-on-activate false
+      focus-on-xdg-activate false
     
       default-column-width { proportion 0.285; }
       default-window-height { proportion 0.256; }
