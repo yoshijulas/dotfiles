@@ -201,3 +201,9 @@ export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git --exclude
 export FZF_CTRL_T_COMMAND="fd --type file --follow --hidden --exclude .git --exclude dosdevices --exclude drive_c --exclude compatdata --exclude pfx --exclude proc --exclude sys --exclude dev --color=always"
 export FZF_DEFAULT_OPTS="--ansi --walker-skip=.git,dosdevices,drive_c,compatdata,pfx,proc,sys,dev"
 # end
+
+
+#AI 
+# secrets live outside the repo in ~/.zsh_secrets (never committed)
+[ -f "$HOME/.zsh_secrets" ] && source "$HOME/.zsh_secrets"
+# end
