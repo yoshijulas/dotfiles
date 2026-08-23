@@ -17,10 +17,16 @@
         // "LIBVA_DRIVER_NAME" "nvidia"
     }
 
+    // cursor {
+    //     xcursor-theme "capitaine-cursors"
+    //     xcursor-size 24
+    // }
     cursor {
-        xcursor-theme "capitaine-cursors"
-        xcursor-size 24
+      xcursor-theme "Bibata-Material-Beige"  // Replace with your preferred theme
+      xcursor-size 20
     }
+
+
 
     debug {
         // Allows notification actions and window activation from Noctalia.
