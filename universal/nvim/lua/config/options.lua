@@ -9,5 +9,8 @@ vim.g.loaded_nvim_dir_plugin = 0
 -- Undo LazyVim default: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua#L6
 vim.g.autoformat = false
 
+-- Bacon ls
+-- vim.g.lazyvim_rust_diagnostics = "bacon-ls"
+
 -- Set a fixed column guide at 80 or 100 characters
 vim.opt.colorcolumn = "100"
