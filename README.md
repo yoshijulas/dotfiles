@@ -12,6 +12,8 @@
 - [omzsh](https://github.com/ohmyzsh/ohmyzsh)
 - [btop](https://github.com/aristocratos/btop)
 - [foot](https://codeberg.org/dnkl/foot)
+- [Oniri](https://github.com/Antiz96/oniri)
+- [swayimg](https://github.com/artemsen/swayimg)
 
 ## old
 
