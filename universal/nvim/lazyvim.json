@@ -12,7 +12,8 @@
     "lazyvim.plugins.extras.lang.typescript.biome",
     "lazyvim.plugins.extras.ui.treesitter-context",
     "lazyvim.plugins.extras.util.dot",
-    "lazyvim.plugins.extras.util.mini-hipatterns"
+    "lazyvim.plugins.extras.util.mini-hipatterns",
+    "lazyvim.plugins.extras.ai.sidekick"
   ],
   "install_version": 8,
   "news": {
