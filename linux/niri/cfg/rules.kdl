@@ -1,3 +1,4 @@
+
     window-rule {
         geometry-corner-radius 20 // Set every window radius to 20
         clip-to-geometry true
@@ -40,6 +41,31 @@
       default-window-height { proportion 0.256; }
 
       default-floating-position x=20 y=20 relative-to="bottom-right"
+    }
+
+
+    window-rule {
+      match app-id="Warframe-companion" title="FrameForge Overlay"
+
+      open-floating true
+      open-focused false
+
+      draw-border-with-background false
+      // geometry-corner-radius 0
+      // clip-to-geometry false
+
+      default-floating-position x=0 y=-60 relative-to="bottom"
+
+      // Useful for debugging disable
+      focus-ring {
+        off
+      }
+      border {
+        off
+      }
+      shadow {
+        off
+      }
     }
 
     window-rule {
@@ -89,3 +115,5 @@
         match namespace="^noctalia-wallpaper*"
         place-within-backdrop true
     }
+
+
