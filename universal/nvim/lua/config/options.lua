@@ -4,3 +4,7 @@
 
 -- Disable Neovim 0.11+ built-in dir.lua directory plugin
 vim.g.loaded_nvim_dir_plugin = 0
+
+-- Disable format on save
+-- Undo LazyVim default: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua#L6
+vim.g.autoformat = false
