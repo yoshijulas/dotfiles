@@ -186,3 +186,7 @@ alias lazyvim="NVIM_APPNAME=lazyvim nvim"
 alias astronvim="NVIM_APPNAME=astronvim nvim"
 # alias cleannvim="NVIM_APPNAME=cleannvim nvim"
 # end
+
+# Display compiling shader globally with proton
+export DXVK_HUD=compiler
+# end
