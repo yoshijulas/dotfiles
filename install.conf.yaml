@@ -18,10 +18,12 @@
     shell:
       if: "ver"
 - link:
+    ~/.bunfig.toml: universal/bunfig.toml
     ~/.config/starship.toml: universal/starship/starship.toml
     ~/AppData/Local/lazygit: universal/lazygit
     ~/AppData/Local/nvim: universal/nvim
     ~/AppData/Local/rio: universal/rio
+    ~/AppData/Roaming/rustfmt/rustfmt.toml: universal/rustfmt/rustfmt.toml
     ~/AppData/Roaming/topgrade.toml: universal/topgrade.toml
     ~/AppData/Roaming/yazi/config: universal/yazi
     ~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1: windows/PowerShell/Microsoft.PowerShell_profile.ps1
@@ -33,7 +35,9 @@
 - defaults:
     link:
       if: '[ "$(uname)" = "Linux" ]'
+      create: true
 - link:
+    ~/.bunfig.toml: universal/bunfig.toml
     ~/.config/btop: linux/btop
     ~/.config/feh/themes: linux/feh/themes
     ~/.config/foot: linux/foot
@@ -43,7 +47,9 @@
     ~/.config/niri: linux/niri
     ~/.config/nvim: universal/nvim
     ~/.config/rio: universal/rio
+    ~/.config/rustfmt/rustfmt.toml: universal/rustfmt/rustfmt.toml
     ~/.config/starship.toml: universal/starship/starship.toml
+    ~/.config/swayimg: linux/swayimg
     ~/.config/topgrade.toml: universal/topgrade.toml
     ~/.config/yazi: universal/yazi
     ~/.config/zathura: linux/zathura
