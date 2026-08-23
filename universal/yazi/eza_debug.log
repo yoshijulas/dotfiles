@@ -1,0 +1,7 @@
+=== eza-preview DEBUG ===
+raw_url: trash://%2Fhome%2Fyoshi%2F.local%2Fshare%2FTrash%2Finfo%2Fsnippets-1784089716.379516.trashinfo/@//snippets
+target_path: /home/yoshi/.local/share/Trash/files/snippets
+line_count: 0
+stderr: "/home/yoshi/.local/share/Trash/files/snippets": No such file or directory (os error 2)
+
+args: --color=always --group-directories-first --no-quotes /home/yoshi/.local/share/Trash/files/snippets --tree --level=3 --icons=always --all
