@@ -23,6 +23,7 @@
     ~/AppData/Local/lazygit: universal/lazygit
     ~/AppData/Local/nvim: universal/nvim
     ~/AppData/Local/rio: universal/rio
+    ~/AppData/Roaming/jj: universal/jj
     ~/AppData/Roaming/rustfmt/rustfmt.toml: universal/rustfmt/rustfmt.toml
     ~/AppData/Roaming/topgrade.toml: universal/topgrade.toml
     ~/AppData/Roaming/yazi/config: universal/yazi
@@ -41,6 +42,7 @@
     ~/.config/btop: linux/btop
     ~/.config/feh/themes: linux/feh/themes
     ~/.config/foot: linux/foot
+    ~/.config/jj: universal/jj
     ~/.config/lazygit: universal/lazygit
     ~/.config/MangoHud: linux/MangoHud
     ~/.config/mimeapps.list: linux/mimeapps.list

@@ -1,0 +1,6 @@
+# Bun Configuration File (~/.bunfig.toml)
+
+[install]
+# Protect against compromised/malicious packages (supply chain attacks)
+# Delay installation of any package version published less than 3 days ago (259200 seconds)
+# minimumReleaseAge = 259200

@@ -1,0 +1,13 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
+[user]
+name = "yoshijulas"
+email = "yoshijulas@live.com"
+
+[signing]
+behavior = "own"
+backend = "gpg"
+key = "66C762D12DF21D72"
+
+[git]
+sign-on-push = true
