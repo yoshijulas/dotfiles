@@ -167,7 +167,6 @@ alias u-adata='systemd-mount --unmount /media/adata'
 export PATH="$HOME/.local/bin:$PATH"
 # End of adding local bin to path
 
-
 # Fix for java?
 export _JAVA_AWT_WM_NONREPARENTING=1
 # End
@@ -189,4 +188,16 @@ alias astronvim="NVIM_APPNAME=astronvim nvim"
 
 # Display compiling shader globally with proton
 export DXVK_HUD=compiler
+# end
+
+# set SCCACHE_BASEDIR
+export SCCACHE_BASEDIR="$HOME"
+# end
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+export FZF_DEFAULT_COMMAND="fd --follow --hidden --exclude .git --exclude dosdevices --exclude drive_c --exclude compatdata --exclude pfx --exclude proc --exclude sys --exclude dev --color=always"
+export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git --exclude dosdevices --exclude drive_c --exclude compatdata --exclude pfx --exclude proc --exclude sys --exclude dev --color=always'
+export FZF_CTRL_T_COMMAND="fd --type file --follow --hidden --exclude .git --exclude dosdevices --exclude drive_c --exclude compatdata --exclude pfx --exclude proc --exclude sys --exclude dev --color=always"
+export FZF_DEFAULT_OPTS="--ansi --walker-skip=.git,dosdevices,drive_c,compatdata,pfx,proc,sys,dev"
 # end
