@@ -195,7 +195,7 @@ no_self_update = true
 # aura_pacman_arguments = ""
 # garuda_update_arguments = ""
 
-show_arch_news = false 
+show_arch_news = false
 
 # trizen_arguments = "--devel"
 
@@ -363,7 +363,7 @@ show_arch_news = false
 # Specify the containers to ignore while updating (Wildcard supported)
 # ignored_containers = ["ghcr.io/rancher-sandbox/rancher-desktop/rdx-proxy:latest", "docker.io*"]
 # Specify the runtime to use for containers (default: "docker", allowed values: "docker", "podman")
-# runtime = "podman"
+runtime = "docker"
 
 # Run 'docker system prune' to clean up unused containers, networks, and build cache
 # (default: false)
