@@ -19,59 +19,29 @@ return {
         -- Use mini.icons as the icon provider
         icon = "mini_icons",
       },
+      extensions = {
+        git = { enabled = true },
+        trash = { enabled = true },
+      },
+      ui = {
+        indent_guides = true,
+      },
+      follow_current_file = true,
     },
+
     keys = {
       {
         "<leader>-",
         mode = "n",
-        "<cmd>Fyler<cr>",
+        -- "<cmd>Fyler<cr>",
+        function()
+          require("fyler").open()
+        end,
         desc = "Open Fyler explorer",
       },
     },
     -- }, keys = {("n", "<leader>e", fyler.open, { desc = "fyler.nvim - open" })}
   },
-  -- {
-  --   "stevearc/oil.nvim",
-  --   dependencies = { { "nvim-mini/mini.icons", opts = {} } },
-  --   -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
-  --   lazy = false,
-  --   opts = {
-  --     columns = {
-  --       "icon",
-  --       -- "permissions",
-  --       "size",
-  --       -- "mtime",
-  --     },
-  --     -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
-  --     delete_to_trash = true,
-  --     view_options = {
-  --       show_hidden = true,
-  --     },
-  --     win_options = {
-  --       winbar = "%!v:lua.get_oil_winbar()",
-  --     },
-  --   },
-  --
-  --   keys = {
-  --     { "-", "<cmd>Oil<cr>", desc = "Open parent directory" },
-  --     {
-  --       "<leader>-",
-  --       function()
-  --         require("oil").toggle_float()
-  --       end,
-  --       desc = "Oil float",
-  --     },
-  --   },
-  --
-  --   init = function()
-  --     vim.api.nvim_create_autocmd("FileType", {
-  --       pattern = "oil",
-  --       callback = function()
-  --         vim.opt_local.cursorline = true
-  --       end,
-  --     })
-  --   end,
-  -- },
   {
     "mikavilpas/yazi.nvim",
     event = "VeryLazy",
@@ -86,5 +56,17 @@ return {
         desc = "Open yazi at the current file",
       },
     },
+    opts = {
+      -- open Yazi automatically when starting Neovim on a directory (e.g. nvim .)
+      open_for_directories = false,
+      keymaps = {
+        show_help = "<f1>",
+      },
+    },
+    init = function()
+      -- mark netrw as loaded so it's not loaded at all.
+      -- More details: https://github.com/mikavilpas/yazi.nvim/issues/802
+      vim.g.loaded_netrwPlugin = 1
+    end,
   },
 }
