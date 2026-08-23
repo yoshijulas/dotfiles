@@ -1,0 +1,20 @@
+  {
+    "m4xshen/smartcolumn.nvim",
+    opts = {
+      colorcolumn = "100",
+      disabled_filetypes = {
+        "alpha",
+        "checkhealth",
+        "help",
+        "lazy",
+        "markdown",
+        "mason",
+        "ministarter",
+        "neo-tree",
+        "octo",
+        "oil",
+        "snacks_dashboard",
+        "text",
+      },
+    },
+  },
