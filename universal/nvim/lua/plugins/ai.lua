@@ -90,10 +90,16 @@ return {
   },
   {
     "folke/sidekick.nvim",
+    -- TEMP: PR #333 (herdr mux support) — revert to upstream once merged:
+    -- remove url+branch, then :Lazy update sidekick.nvim
+    url = "https://github.com/rmarganti/sidekick.nvim",
+    branch = "herdr",
     opts = {
       -- next-edit-suggestions need a Copilot sub; completion is handled by minuet
       nes = { enabled = false },
       cli = {
+        -- persist agent sessions in herdr panes (PR #333)
+        mux = { enabled = true, backend = "herdr" },
         tools = {
           agy = {
             cmd = { "agy" },
