@@ -51,7 +51,7 @@
   "quicker.nvim": { "branch": "master", "commit": "4a6883cb13fe097a20a046eb55f6dffd239276e3" },
   "rainbow-delimiters.nvim": { "branch": "master", "commit": "012f1480cd9a5fc99fce7678e0a536421a53fc46" },
   "rustaceanvim": { "branch": "main", "commit": "fb64f1d85ca1505ce936c565f83bf20105801b08" },
-  "sidekick.nvim": { "branch": "main", "commit": "208e1c5b8170c01fd1d07df0139322a76479b235" },
+  "sidekick.nvim": { "branch": "herdr", "commit": "2695e0263c373589d0144a81d100409eda3619b7" },
   "smartcolumn.nvim": { "branch": "main", "commit": "5351ae24e992a397d2abac48b7774dc8ef0acf40" },
   "snacks.nvim": { "branch": "main", "commit": "882c996cf28183f4d63640de0b4c02ec886d01f2" },
   "sonokai": { "branch": "master", "commit": "b023c5280b16fe2366f5e779d8d2756b3e5ee9c3" },
