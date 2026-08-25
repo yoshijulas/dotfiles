@@ -202,6 +202,9 @@ export FZF_CTRL_T_COMMAND="fd --type file --follow --hidden --exclude .git --exc
 export FZF_DEFAULT_OPTS="--ansi --walker-skip=.git,dosdevices,drive_c,compatdata,pfx,proc,sys,dev"
 # end
 
+# Set up jj autocompletion
+source <(COMPLETE=zsh jj)
+# end
 
 #AI 
 # secrets live outside the repo in ~/.zsh_secrets (never committed)
