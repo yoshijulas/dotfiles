@@ -36,6 +36,8 @@
 - [mise](https://github.com/mikefarah/mise)
 - [Starship](https://github.com/starship/starship)
 - [topgrade](https://github.com/topgrade-rs/topgrade)
+- [jj](https://github.com/jj-vcs/jj)
+- [Rio](https://github.com/raphamorim/rio)
 
 ### Utilities
 

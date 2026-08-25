@@ -24,12 +24,12 @@
     ~/AppData/Local/nvim: universal/nvim
     ~/AppData/Local/rio: universal/rio
     ~/AppData/Roaming/jj: universal/jj
-    ~/AppData/Roaming/rustfmt/rustfmt.toml: universal/rustfmt/rustfmt.toml
+    ~/AppData/Roaming/rustfmt: universal/rustfmt
     ~/AppData/Roaming/topgrade.toml: universal/topgrade.toml
     ~/AppData/Roaming/yazi/config: universal/yazi
     ~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1: windows/PowerShell/Microsoft.PowerShell_profile.ps1
 - shell:
-    - command: 'powershell -ExecutionPolicy Bypass -File "windows/install-scoop-packages.ps1"'
+    - command: 'powershell -ExecutionPolicy Bypass -File "windows/setup-programs.ps1"'
       description: "Installing Windows packages via Scoop"
 
 # Linux-specific links
@@ -40,7 +40,7 @@
 - link:
     ~/.bunfig.toml: universal/bunfig.toml
     ~/.config/btop: linux/btop
-    ~/.config/feh/themes: linux/feh/themes
+    ~/.config/feh: linux/feh
     ~/.config/foot: linux/foot
     ~/.config/ghostty: linux/ghostty
     ~/.config/jj: universal/jj
@@ -50,7 +50,7 @@
     ~/.config/niri: linux/niri
     ~/.config/nvim: universal/nvim
     ~/.config/rio: universal/rio
-    ~/.config/rustfmt/rustfmt.toml: universal/rustfmt/rustfmt.toml
+    ~/.config/rustfmt: universal/rustfmt
     ~/.config/starship.toml: universal/starship/starship.toml
     ~/.config/swayimg: linux/swayimg
     ~/.config/topgrade.toml: universal/topgrade.toml
