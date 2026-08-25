@@ -3,3 +3,5 @@ universal/nvim/lazy-lock.json
 universal/jj/repos/
 linux/halloy/config.toml
 repos/
+__pycache__/
+*.pyc
