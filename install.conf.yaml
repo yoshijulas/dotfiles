@@ -56,12 +56,9 @@
     ~/.config/yazi: universal/yazi
     ~/.config/zathura: linux/zathura
     ~/.zshrc: linux/.zshrc
-    # Not used anymore
-    # ~/.config/hypr: linux/hypr
-    # ~/.config/rofi: linux/rofi
-    # ~/.config/swaync: linux/swaync
-    # ~/.config/waybar: linux/waybar
-    # ~/.config/xkb/symbols/latam_prog: linux/keyboard/latam_prog
-
-- shell:
-    - [git submodule update --init --recursive, Installing submodules]
+    # Not used anymore (archived in unused/)
+    # ~/.config/hypr: unused/linux/hypr
+    # ~/.config/rofi: unused/linux/rofi
+    # ~/.config/swaync: unused/linux/swaync
+    # ~/.config/waybar: unused/linux/waybar
+    # ~/.config/xkb/symbols/latam_prog: unused/linux/keyboard/latam_prog
