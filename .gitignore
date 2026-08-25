@@ -1,4 +1,5 @@
-lazygit/state*
-nvim/lazy-lock.json
+universal/lazygit/state*
+universal/nvim/lazy-lock.json
 universal/jj/repos/
+linux/halloy/config.toml
 repos/
