@@ -99,10 +99,23 @@ return {
       nes = { enabled = false },
       cli = {
         -- persist agent sessions in herdr panes (PR #333)
-        mux = { enabled = true, backend = "herdr" },
+        mux = {
+          enabled = true,
+          backend = "herdr",
+          create = "split",
+          split = {
+            size = 0.33, -- Adjust the size of the new herdr pane/window
+          },
+        },
         tools = {
           agy = {
             cmd = { "agy" },
+          },
+          omp = {
+            cmd = { "omp" },
+            is_proc = "\\<omp\\>",
+            resume = { "--resume" },
+            continue = { "--continue" },
           },
         },
       },
