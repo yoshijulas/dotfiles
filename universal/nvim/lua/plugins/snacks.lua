@@ -3,6 +3,7 @@ return {
   priority = 1000,
   lazy = false,
   opts = {
+    statuscolumn = { enabled = false },
     bigfile = {
       size = 8 * 1024 * 1024,
       --   enabled = false,
