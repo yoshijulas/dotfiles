@@ -40,6 +40,7 @@
 - link:
     ~/.bunfig.toml: universal/bunfig.toml
     ~/.config/btop: linux/btop
+    ~/.config/easyeffects: linux/easyeffects
     ~/.config/feh: linux/feh
     ~/.config/foot: linux/foot
     ~/.config/ghostty: linux/ghostty
