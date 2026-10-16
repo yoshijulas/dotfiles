@@ -11,3 +11,10 @@ key = "66C762D12DF21D72"
 
 [git]
 sign-on-push = true
+
+[merge-tools.nvimdiff]
+program = "nvim"
+merge-args = ["-f", "-d", "$output", "-M", "$left", "$base", "$right",
+  "-c", "wincmd J", "-c", "set modifiable", "-c", "set write"]
+merge-tool-edits-conflict-markers = true
+
