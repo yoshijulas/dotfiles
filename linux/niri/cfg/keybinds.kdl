@@ -126,6 +126,7 @@ binds {
 
     // ─── Screenshots ───
     CTRL+Shift+1                        { screenshot; }
+    Mod+Print                           { screenshot; }
     CTRL+Shift+2                        { screenshot-screen; }
     CTRL+Shift+3                        { screenshot-window; }
 
