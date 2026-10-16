@@ -29,45 +29,6 @@ return {
     opts = {},
   },
   {
-    "svampkorg/moody.nvim",
-    event = { "ModeChanged", "BufWinEnter", "WinEnter" },
-    opts = {
-      -- one blend for every mode, or a per-mode table (see Configuration)
-      blends = 0.1,
-      colors = {
-        normal = "#00BFFF",
-        insert = "#70CF67",
-        visual = "#AD6FF7",
-      },
-      disabled = {
-        filetypes = { "TelescopePrompt" },
-      },
-      extend = {
-        line_number = true, -- colour the line-number column too
-      },
-      recording = { enabled = true },
-      column = {
-        enabled = false, -- replace 'statuscolumn' with moody's
-        numbers = true, -- show line numbers
-        signs = true, -- show the sign column
-        folds = {
-          enabled = true,
-          start_color = "#C1C1C1", -- gradient start across fold levels
-          end_color = "#2F2F2F", -- gradient end
-        },
-        marks = {
-          enabled = true,
-          alphabetic = true, -- a-z / A-Z marks
-          other = false, -- non-alphabetic marks
-        },
-        highlight = {}, -- base highlight for the column, e.g. { bg = "#101010" }
-        separator = {
-          char = "", -- drawn between the column and the code
-          highlight = {}, -- e.g. { fg = "#333333" }; defaults to CursorLine bg
-        },
-      },
-    },
-  },
   {
     "tadaa/vimade",
     opts = {
@@ -75,45 +36,7 @@ return {
       fadelevel = 0.4,
     },
   },
-  -- {
-  --   "mvllow/modes.nvim",
-  --   config = function()
-  --     require("modes").setup({
-  --       -- colors = {
-  --       --   bg = "", -- Optional bg param, defaults to Normal hl group
-  --       --   copy = "#f5c359",
-  --       --   delete = "#c75c6a",
-  --       --   change = "#c75c6a", -- Optional param, defaults to delete
-  --       --   format = "#c79585",
-  --       --   insert = "#78ccc5",
-  --       --   replace = "#245361",
-  --       --   select = "#9745be", -- Optional param, defaults to visual
-  --       --   visual = "#9745be",
-  --       -- },
-
-  --       -- Set opacity for cursorline and number background
-  --       line_opacity = 0.2,
-
-  --       -- Enable cursor highlights
-  --       set_cursor = true,
-
-  --       -- Enable cursorline initially, and disable cursorline for inactive windows
-  --       -- or ignored filetypes
-  --       set_cursorline = true,
-
-  --       -- Enable line number highlights to match cursorline
-  --       set_number = true,
-
-  --       -- Enable sign column highlights to match cursorline
-  --       set_signcolumn = true,
-
-  --       -- Disable modes highlights for specified filetypes
-  --       -- or enable with prefix "!" if otherwise disabled (please PR common patterns)
-  --       -- Can also be a function fun():boolean that disables modes highlights when true
-  --       ignore = { "NvimTree", "TelescopePrompt", "!minifiles" },
-  --     })
-  --   end,
-  -- },
+  },
   {
     "CoreyKaylor/diffbandit.nvim",
     opts = {
