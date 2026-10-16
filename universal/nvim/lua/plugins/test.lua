@@ -1,19 +1,66 @@
 return {
+  {
+    "mihovilrak/scroll.nvim",
+    opts = {
+      visibility = "always",
+    },
+  },
+  {
+    "wellatleastitried/bitwise-visualizer.nvim",
+    main = "bitwise-visualizer",
+    event = "VeryLazy",
+    opts = {
+      -- everything is optional; see the configuration reference
+      width = "auto",
+    },
+  },
+  {
+    "kevinhwang91/nvim-hlslens",
+    opts = {
+      calm_down = true,
+    },
+    config = function(_, opts)
+      require("hlslens").setup(opts)
+
+      local kopts = { noremap = true, silent = true }
+
+      vim.api.nvim_set_keymap(
+        "n",
+        "n",
+        [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
+        kopts
+      )
+      vim.api.nvim_set_keymap(
+        "n",
+        "N",
+        [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
+        kopts
+      )
+      vim.api.nvim_set_keymap("n", "*", [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+      vim.api.nvim_set_keymap("n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
+      vim.api.nvim_set_keymap("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+      vim.api.nvim_set_keymap("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
+    end,
+  },
+  {
+    "abecodes/tabout.nvim",
+    event = "InsertCharPre",
+    opts = {},
+  },
   -- {
   --   "leolaurindo/tunnelvision.nvim",
   --   opts = {},
   -- },
+  -- {
+  --   "tadaa/vimade",
+  --   opts = {
+  --     recipe = { "default", { animate = true } },
+  --     fadelevel = 0.4,
+  --   },
+  -- },
+  {
+    "NStefan002/screenkey.nvim",
     lazy = false,
-    opts = {},
-  },
-  {
-  {
-    "tadaa/vimade",
-    opts = {
-      recipe = { "default", { animate = true } },
-      fadelevel = 0.4,
-    },
-  },
   },
   {
     "CoreyKaylor/diffbandit.nvim",
@@ -147,5 +194,24 @@ return {
         },
       },
     },
+  },
+  {
+    "saghen/blink.cmp",
+    dependencies = {
+      { "mikavilpas/blink-ripgrep.nvim", version = "*" },
+    },
+    opts = function(_, opts)
+      opts.sources = opts.sources or {}
+      opts.sources.default = opts.sources.default or { "lsp", "path", "snippets", "buffer" }
+      if not vim.tbl_contains(opts.sources.default, "ripgrep") then
+        table.insert(opts.sources.default, "ripgrep")
+      end
+      opts.sources.providers = opts.sources.providers or {}
+      opts.sources.providers.ripgrep = {
+        module = "blink-ripgrep",
+        name = "Ripgrep",
+        opts = {},
+      }
+    end,
   },
 }
