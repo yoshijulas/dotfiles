@@ -1,4 +1,4 @@
-[manager]
+[mgr]
 show_hidden = true
 
 # git.yazi
@@ -10,3 +10,19 @@ group = "git"
 url   = "*/"
 run   = "git"
 group = "git"
+
+# ouch.yazi
+[[plugin.prepend_previewers]]
+mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}"
+run  = "ouch"
+
+# spot.yazi
+[plugin]
+prepend_spotters = [
+  # use the plugin for a specific mime type
+  { mime = "audio/*", run = "spot" },
+  # # use as a spotter for all directories
+  # { url = "*/", run = "spot" },
+  # use as a fallback for all files that don't have a spotter
+  { url = "*", run = "spot" },
+]
