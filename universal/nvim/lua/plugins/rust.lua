@@ -21,6 +21,9 @@ return {
               "-Aclippy::cast_possible_truncation", -- Allow larger to smaller int casts (e.g., u32 -> u8, usize -> u32)
               "-Aclippy::cast_precision_loss", -- Allow int to float casts that may lose bits (e.g., usize -> f32)
             },
+            extraEnv = {
+              CLIPPY_DISABLE_DOCS_LINKS = "1", -- Drop "for further information visit <url>" from clippy messages (nightly toolchain)
+            },
           },
         },
       },
