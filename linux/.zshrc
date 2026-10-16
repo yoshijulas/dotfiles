@@ -128,8 +128,8 @@ export EDITOR=nvim
 # pnpm
 export PNPM_HOME="/home/yoshi/.local/share/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
 
@@ -211,4 +211,19 @@ source <(COMPLETE=zsh jj)
 #AI 
 # secrets live outside the repo in ~/.zsh_secrets (never committed)
 [ -f "$HOME/.zsh_secrets" ] && source "$HOME/.zsh_secrets"
+# end
+
+. "$HOME/.local/bin/env"
+
+# dcg: warn if hook was silently removed from Claude Code settings
+if command -v dcg &>/dev/null && command -v jq &>/dev/null; then
+  if [ -f "$HOME/.claude/settings.json" ] && \
+     ! jq -e '.hooks.PreToolUse[]? | select(.hooks[]?.command | test("dcg\"?$"))' \
+       "$HOME/.claude/settings.json" &>/dev/null; then
+    printf '\033[1;33m[dcg] Hook missing from ~/.claude/settings.json — run: dcg install\033[0m\n'
+  fi
+fi
+
+# add dotnet to path
+export PATH="$HOME/.dotnet/tools:$PATH"
 # end
