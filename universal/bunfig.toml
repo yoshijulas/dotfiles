@@ -2,6 +2,5 @@
 
 [install]
 # Protect against compromised/malicious packages (supply chain attacks)
-# Delay installation of any package version published less than 3 days ago (259200 seconds)
-minimumReleaseAge = 259200
-linker = "isolated"
+# Delay installation of any package version published less than 1 day ago (86400 seconds)
+minimumReleaseAge = 86400
