@@ -116,6 +116,8 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias la="eza --icons=always -l --all --color=always $1"
 alias ls="eza --icons=always --color=always $1"
 alias cat="bat $1"
+alias tree="eza --tree --icons"
+alias grep="rg --color=auto $1"
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
