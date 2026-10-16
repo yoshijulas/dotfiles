@@ -3,28 +3,6 @@ return {
   --   "leolaurindo/tunnelvision.nvim",
   --   opts = {},
   -- },
-  {
-    "m4xshen/smartcolumn.nvim",
-    opts = {
-      colorcolumn = "100",
-      disabled_filetypes = {
-        "alpha",
-        "checkhealth",
-        "help",
-        "lazy",
-        "markdown",
-        "mason",
-        "ministarter",
-        "neo-tree",
-        "octo",
-        "oil",
-        "snacks_dashboard",
-        "text",
-      },
-    },
-  },
-  {
-    "celeste3z/celeste_comment.nvim",
     lazy = false,
     opts = {},
   },
