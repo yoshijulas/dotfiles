@@ -12,19 +12,20 @@
     }
 
     window-rule {
+      match app-id="firefox-nightly"
+      open-on-workspace "3"
+    }
+
+    window-rule {
       match app-id="discord"
       match app-id="com.github.th-ch.youtube-music"
+      match app-id="vesktop"
       open-on-workspace "8"
     }
 
     window-rule {
       match app-id="org.mozilla.Thunderbird"
       open-on-workspace "9"
-    }
-
-    window-rule {
-      match app-id="firefox-nightly"
-      open-on-workspace "3"
     }
 
     window-rule { 
@@ -72,11 +73,6 @@
        match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
        default-floating-position x=10 y=10 relative-to="bottom-right"
        open-focused false
-    }
-
-    window-rule {
-        match title="AlecaFrame"
-        open-floating true
     }
 
     // Fixes virtualbox from opening only half the screen or the default column width
