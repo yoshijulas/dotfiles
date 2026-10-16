@@ -40,6 +40,7 @@
 - link:
     ~/.bunfig.toml: universal/bunfig.toml
     ~/.config/btop: linux/btop
+    ~/.config/environment.d/envvars.conf: linux/environment.d/envvars.conf
     ~/.config/easyeffects: linux/easyeffects
     ~/.config/feh: linux/feh
     ~/.config/foot: linux/foot
@@ -55,6 +56,7 @@
     ~/.config/starship.toml: universal/starship/starship.toml
     ~/.config/swayimg: linux/swayimg
     ~/.config/topgrade.toml: universal/topgrade.toml
+    ~/.config/xdg-desktop-portal: linux/xdg-desktop-portal
     ~/.config/yazi: universal/yazi
     ~/.config/zathura: linux/zathura
     ~/.zshrc: linux/.zshrc
