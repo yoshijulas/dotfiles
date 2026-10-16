@@ -54,7 +54,7 @@ return {
         end
 
         -- Skip large files (e.g. > 100 KB) to prevent editor lag
-        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(bufnr))
+        local ok, stats = pcall(vim.uv.fs_stat, vim.api.nvim_buf_get_name(bufnr))
         if ok and stats and stats.size > 100 * 1024 then
           return false
         end
