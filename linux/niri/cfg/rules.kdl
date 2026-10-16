@@ -35,7 +35,7 @@
       match title="(?i)picture.in.picture"
       open-focused false
       open-floating true
-      focus-on-xdg-activate false
+      on-xdg-activate "set-urgent"
     
       default-column-width { proportion 0.285; }
       default-window-height { proportion 0.256; }
