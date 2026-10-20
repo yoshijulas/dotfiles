@@ -56,6 +56,7 @@
     ~/.config/starship.toml: universal/starship/starship.toml
     ~/.config/swayimg: linux/swayimg
     ~/.config/topgrade.toml: universal/topgrade.toml
+    ~/.config/umbriel: linux/umbriel
     ~/.config/xdg-desktop-portal: linux/xdg-desktop-portal
     ~/.config/yazi: universal/yazi
     ~/.config/zathura: linux/zathura
