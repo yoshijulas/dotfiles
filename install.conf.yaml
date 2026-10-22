@@ -45,6 +45,7 @@
     ~/.config/feh: linux/feh
     ~/.config/foot: linux/foot
     ~/.config/ghostty: linux/ghostty
+    ~/.config/imv: linux/imv
     ~/.config/jj: universal/jj
     ~/.config/lazygit: universal/lazygit
     ~/.config/MangoHud: linux/MangoHud

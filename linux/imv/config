@@ -1,0 +1,3 @@
+[binds]
+r = rotate by 90
+<Shift+R> = rotate by 270
