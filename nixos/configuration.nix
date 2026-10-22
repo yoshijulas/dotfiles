@@ -23,6 +23,7 @@
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 20;
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
@@ -96,6 +97,21 @@
       ];
     };
 
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 14d";
+    };
+
+    optimise.automatic = true;
+  };
+
+  zramSwap.enable = true;
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 24 * 1024;
+    }
   ];
 
   virtualisation.docker.enable = true;
@@ -172,6 +188,10 @@
     enable = true;
     pulse.enable = true;
   };
+
+  # Backends Dolphin needs to list devices, trash and network locations.
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
