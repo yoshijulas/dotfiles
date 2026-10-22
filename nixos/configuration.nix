@@ -16,6 +16,41 @@
     ./hardware-configuration.nix
   ];
 
+  environment.etc."crypttab".text =
+    "seagate_crypt UUID=749fc558-3b53-4387-a555-95cbedc8f026 /root/seagate.key tpm2-device=auto,token-timeout=2min,timeout=0,nofail,luks";
+
+  fileSystems = {
+    "/data" = {
+      device = "/dev/mapper/luks-733460a8-edb4-4798-b8ba-fe1c0681f06";
+      fsType = "btrfs";
+      options = [
+        "subvol=@data"
+        "compress=zstd"
+        "noatime"
+      ];
+    };
+    "/media/seagate/Torrents" = {
+      device = "/dev/mapper/seagate_crypt";
+      fsType = "btrfs";
+      options = [
+        "subvol=@torrents"
+        "noatime"
+        "compress=zstd:1"
+        "nofail"
+      ];
+    };
+    "/media/seagate/YosFiles" = {
+      device = "/dev/mapper/seagate_crypt";
+      fsType = "btrfs";
+      options = [
+        "subvol=@yosfiles"
+        "noatime"
+        "compress=zstd:1"
+        "nofail"
+      ];
+    };
+  };
+
   powerManagement.cpufreq.max = 3200000;
 
   # system.autoUpgrade.enable = true;
