@@ -53,11 +53,13 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
+  # services.displayManager.sddm = {
+  #   enable = true;
+  #   wayland.enable = true;
+  # };
 
+  services.displayManager.noctalia-greeter = {
+    enable = true;
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
