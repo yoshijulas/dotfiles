@@ -25,8 +25,12 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  # other (optional) custom CachyOS packages that may be fit for your setup include:
+  boot.zfs.package = pkgs.zfs_cachyos;
+  hardware.nvidia.package = pkgs.nvidia_cachyos;
+  # # Use latest kernel.
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixos"; # Define your hostname.
 
