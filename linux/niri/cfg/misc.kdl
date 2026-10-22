@@ -23,7 +23,7 @@
     //     xcursor-size 24
     // }
     cursor {
-      xcursor-theme "Bibata-Material-Beige"  // Replace with your preferred theme
+      xcursor-theme "Bibata-Material-Beige"
       xcursor-size 20
     }
 
