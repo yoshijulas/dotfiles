@@ -264,7 +264,7 @@
       inputs.neovim-nightly-overlay.packages.${stdenv.hostPlatform.system}.default
       inputs.helium.packages.${stdenv.hostPlatform.system}.default # helium browser (oxcl flake: repackaged upstream .deb, pinned hash)
 
-      # Nixpkgs 
+      # Nixpkgs
       jujutsu
       git
       wget
