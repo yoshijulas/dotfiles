@@ -64,9 +64,38 @@
 
   services.displayManager.noctalia-greeter = {
     enable = true;
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
+    settings = {
+      cursor = {
+        theme = "Bibata-Modern-Ice";
+        size = 24;
+        path = pkgs.bibata-cursors;
+      };
+    };
+  };
+
+  nix = {
+    package = pkgs.lix;
+    # Lets legacy commands (nix-shell -p, nix-env) resolve <nixpkgs> without channels.
+    nixPath = [ "nixpkgs=flake:nixpkgs" ];
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      trusted-users = [ "@wheel" ];
+
+      extra-substituters = [
+        "https://noctalia.cachix.org"
+        "https://nix-community.cachix.org"
+        "https://umbriel.cachix.org"
+      ];
+      extra-trusted-public-keys = [
+        "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "umbriel.cachix.org-1:JfNq/2yg2S6D6z4Z2dVSZrZlDPQTKtexB6GAVLD98nw="
+      ];
+    };
+
   ];
   nix.settings.trusted-users = [ "@wheel" ];
 
