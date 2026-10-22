@@ -62,6 +62,7 @@
     ~/.config/yazi: universal/yazi
     ~/.config/zathura: linux/zathura
     ~/.zshrc: linux/.zshrc
+    ~/.config/fish/config.fish: linux/config.fish
     # Not used anymore (archived in unused/)
     # ~/.config/hypr: unused/linux/hypr
     # ~/.config/rofi: unused/linux/rofi
