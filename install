@@ -4,9 +4,21 @@ set -e
 
 CONFIG="install.conf.yaml"
 DOTBOT_DIR="dotbot"
+VENV=".venv"
 
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 cd "${BASEDIR}"
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+
+# Dotbot needs PyYAML; keep it in a venv instead of the system python.
+if [ ! -x "${VENV}/bin/python" ]; then
+  if ! command -v uv >/dev/null 2>&1; then
+    echo "error: uv not found; install it (https://docs.astral.sh/uv/) and rerun" >&2
+    exit 1
+  fi
+  uv venv "${VENV}"
+  uv pip install --python "${VENV}/bin/python" -e "./${DOTBOT_DIR}"
+fi
+
+"${VENV}/bin/python" "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"

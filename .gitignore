@@ -5,3 +5,4 @@ linux/halloy/config.toml
 repos/
 __pycache__/
 *.pyc
+.venv/
