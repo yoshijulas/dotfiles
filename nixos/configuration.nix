@@ -97,26 +97,57 @@
     };
 
   ];
-  nix.settings.trusted-users = [ "@wheel" ];
 
-  programs.fish.enable = true;
-  programs.niri.enable = true;
-  programs.niri.package = pkgs.niri_git;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
+  virtualisation.docker.enable = true;
+  virtualisation.docker.daemon.settings.data-root = "/data/docker-nixos";
+  virtualisation.docker.daemon.settings.shutdown-timeout = 360;
+  systemd.services.docker.restartIfChanged = false;
+  systemd.services.docker.serviceConfig.TimeoutStopSec = "6min";
+
+  programs = {
+    fish.enable = true;
+    niri.enable = true;
+    thunderbird.enable = true;
+    gamescope.enable = true;
+    umbriel.enable = true;
+    steam = {
+      enable = true;
+      package = pkgs.steam.override {
+        extraEnv =
+          let
+            sls = inputs.sls-steam.packages.${pkgs.stdenv.hostPlatform.system}.sls-steam;
+          in
+          {
+            LD_AUDIT = "${sls}/library-inject.so:${sls}/SLSsteam.so";
+          };
+        extraProfile = ''
+          export XCURSOR_PATH="${
+            (pkgs.callPackage ./material-bibata-cursor.nix { })
+          }/share/icons''${XCURSOR_PATH:+:$XCURSOR_PATH}"
+          export XCURSOR_THEME="Bibata-Material-Beige"
+          export XCURSOR_SIZE="20"
+        '';
+      };
+    };
+    nh = {
+      enable = true;
+      flake = "/home/yoshi/dotfiles/nixos";
+    };
+    niri.package = pkgs.niri_git;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
+    noctalia = {
+      enable = true;
+
+      # Enables NetworkManager, Bluetooth, UPower, and a power profile service.
+      recommendedServices.enable = true;
+    };
+    appimage.enable = true;
+    appimage.binfmt = true;
+    nix-ld.enable = true;
   };
-
-  programs.noctalia = {
-    enable = true;
-
-    # Enables NetworkManager, Bluetooth, UPower, and a power profile service.
-    recommendedServices.enable = true;
-  };
-
-  programs.appimage.enable = true;
-  programs.appimage.binfmt = true;
-  programs.nix-ld.enable = true;
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
