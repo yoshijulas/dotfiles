@@ -1,12 +1,14 @@
 // ────────────── Startup Applications ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
 
-    spawn-at-startup "oniri"
+    // spawn-at-startup "oniri"
     spawn-at-startup "noctalia"    
     // spawn-sh-at-startup "qs -c noctalia-shell"
-    spawn-at-startup "discord"
-    spawn-at-startup "pear-desktop"
-    spawn-at-startup "thunderbird"
-    spawn-at-startup "firefox-nightly"
+    // spawn-at-startup "discord"
+    // spawn-at-startup "pear-desktop"
+    // spawn-at-startup "limusic-app"
+    // spawn-at-startup "vesktop"
+    // spawn-at-startup "thunderbird"
+    // spawn-at-startup "firefox-nightly"
     spawn-sh-at-startup "kbuildsycoca6 --noincremental"
 
