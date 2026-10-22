@@ -153,10 +153,9 @@
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
+  # Nvidia
   hardware.graphics.enable = true;
-
   services.xserver.videoDrivers = [ "nvidia" ];
-
   hardware.nvidia = {
     modesetting.enable = true;
     open = true;
@@ -186,6 +185,7 @@
     ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       tree
+      kdePackages.dolphin
     ];
     shell = pkgs.fish;
   };
@@ -194,34 +194,95 @@
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
-  environment.systemPackages = with pkgs; [
-    #   neovim-git # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #inputs.noctalia.packages.${stdenv.hostPlatform.system}.default
-    inputs.opencode.packages.${stdenv.hostPlatform.system}.opencode
-    inputs.appmanager.packages.${stdenv.hostPlatform.system}.default
-    # inputs.openchamber.packages.${stdenv.hostPlatform.system}.openchamber-desktop
-    jujutsu
-    git
-    wget
-    yazi
-    vim
-    firefox_nightly
-    ghostty
-    neovim
-    btop
-    nerd-fonts.jetbrains-mono
-    ripgrep
-    bat
-    starship
-    eza
-    fzf
-    nixd
-    statix
-    nixfmt
-    vesktop
-    kdePackages.kleopatra
-    pinentry-curses
-  ];
+  environment.systemPackages =
+    with pkgs;
+    [
+      # Flakes
+      inputs.opencode.packages.${stdenv.hostPlatform.system}.opencode
+      # appmanager builds from source without glib-networking, so its updater has
+      # no GIO TLS backend ("TLS support is not available"). This wires it in so
+      # HTTPS update checks validate against the system CA bundle. Upstream fix:
+      # add glib-networking to buildInputs in kem-a/AppManager package.nix.
+      (inputs.appmanager.packages.${stdenv.hostPlatform.system}.default.overrideAttrs (old: {
+        buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.glib-networking ];
+      }))
+      inputs.neovim-nightly-overlay.packages.${stdenv.hostPlatform.system}.default
+      inputs.helium.packages.${stdenv.hostPlatform.system}.default # helium browser (oxcl flake: repackaged upstream .deb, pinned hash)
+
+      # Nixpkgs 
+      jujutsu
+      git
+      wget
+      yazi
+      vim
+      firefox_nightly
+      ghostty
+      wl-clipboard
+      btop
+      nerd-fonts.jetbrains-mono
+      ripgrep
+      bat
+      starship
+      eza
+      fzf
+      fd
+      lazygit
+      vesktop
+      kdePackages.kleopatra
+      pinentry-curses
+      nvd
+      steam-run
+      xwayland-satellite
+      mangohud
+      pkgsi686Linux.mangohud
+      (callPackage ./material-bibata-cursor.nix { })
+      unzip
+      ouch
+      duf
+      topgrade
+      cryptomator
+      swayimg
+      imv
+      libreoffice
+      localsend
+      pureref
+
+      proton-cachyos_x86_64_v3
+
+      # Test
+      oxker # lazydocker like tool
+      gitlogue
+    ]
+
+    # Dev tools (appended to the list above).
+    ++ [
+      # LSP servers: nvim gets these from nixpkgs on NixOS (Mason is disabled).
+      bash-language-server # LSP: bashls (bash/sh)
+      fsautocomplete # LSP: fsautocomplete (fsharp)
+      kotlin-language-server # LSP: kotlin_language_server (kotlin)
+      lemminx # LSP: lemminx (xml/xaml)
+      lua-language-server # LSP: lua_ls (lua)
+      nixd # LSP: nixd (nix)
+      omnisharp-roslyn # LSP: omnisharp (c#)
+      vscode-langservers-extracted # LSP: jsonls (json, +html/css)
+      vtsls # LSP: vtsls (typescript/javascript)
+      yaml-language-server # LSP: yamlls (yaml)
+      # Runtimes / toolchains
+      bun # fast JS runtime/package manager, npm alternative
+      dotnet-sdk # .NET SDK (C# builds; omnisharp analyzes without it)
+      gcc # C compiler: nvim-treesitter builds parsers from source
+      jdk25 # latest Java
+      nodejs # node + npm (nvim plugins, LSP servers, frontend)
+      python3 # python (nvim plugins, scripts)
+      uv # python project/package manager, replaces pip + venv
+      # Helpers
+      mise # polyglot version manager (node/python pinning per project)
+      skills # skills.sh CLI: find/add/update agent skills
+      nixfmt # nix formatter
+      statix # nix linter
+      taplo # toml formatter (lua/plugins/lsp/toml.lua)
+      tree-sitter # tree-sitter CLI: required by nvim-treesitter (:checkhealth)
+    ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -266,11 +327,12 @@
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "26.05"; # Did you read the comment?
 
-  nix.settings = {
-    extra-substituters = [ "https://noctalia.cachix.org" ];
-    extra-trusted-public-keys = [
-      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
-    ];
-  };
+  # eMudhra intermediates compromise (Oct 2026): distrust the affected roots
+  # until the updated CA bundle lands. Revert the AAA line if legacy sites break.
+  # https://emudhra.we-have-a-problem.com/
+  security.pki.caCertificateBlacklist = [
+    "Comodo AAA Services root"
+    "emSign ECC Root CA - G3"
+  ];
 
 }
