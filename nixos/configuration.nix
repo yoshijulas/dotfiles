@@ -167,7 +167,7 @@
   };
 
   nix = {
-    package = pkgs.lix;
+    package = pkgs.lixPackageSets.latest.lix;
     # Lets legacy commands (nix-shell -p, nix-env) resolve <nixpkgs> without channels.
     nixPath = [ "nixpkgs=flake:nixpkgs" ];
     settings = {
@@ -181,11 +181,13 @@
         "https://noctalia.cachix.org"
         "https://nix-community.cachix.org"
         "https://umbriel.cachix.org"
+        "https://yazi.cachix.org"
       ];
       extra-trusted-public-keys = [
         "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "umbriel.cachix.org-1:JfNq/2yg2S6D6z4Z2dVSZrZlDPQTKtexB6GAVLD98nw="
+        "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
       ];
     };
 
@@ -303,7 +305,6 @@
     shell = pkgs.fish;
   };
 
-  # programs.firefox.enable = true;
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
