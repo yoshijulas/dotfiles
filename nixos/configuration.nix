@@ -120,6 +120,15 @@
     };
   };
 
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      AllowUsers = [ "yoshi" ];
+      MaxAuthTries = 3;
+      PerSourcePenalties = "crash:3600s authfail:3600s max:86400s";
+    };
+  };
 
   # Set your time zone.
   time.timeZone = "America/Mexico_City";
@@ -200,6 +209,7 @@
   virtualisation.docker.enable = true;
   virtualisation.docker.daemon.settings.data-root = "/data/docker-nixos";
   virtualisation.docker.daemon.settings.shutdown-timeout = 360;
+  users.groups.docker.gid = 131; # pinned: dockhand compose group_add repeats it
   systemd.services.docker.restartIfChanged = false;
   systemd.services.docker.serviceConfig.TimeoutStopSec = "6min";
 
@@ -435,9 +445,10 @@
   # eMudhra intermediates compromise (Oct 2026): distrust the affected roots
   # until the updated CA bundle lands. Revert the AAA line if legacy sites break.
   # https://emudhra.we-have-a-problem.com/
+  # Note: "emSign ECC Root CA - G3" was dropped once nss-cacert removed it
+  # upstream (blacklisting a cert absent from the store fails the build).
   security.pki.caCertificateBlacklist = [
     "Comodo AAA Services root"
-    "emSign ECC Root CA - G3"
   ];
 
 }
