@@ -308,9 +308,22 @@
     shell = pkgs.fish;
   };
 
+  fonts.packages = with pkgs; [
+    # Windows fonts
+    corefonts
+    vista-fonts
+    # Download aptos from microsoft site
+  ];
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
+  # Session-wide cursor theme (XWayland apps like RustDesk read env, not niri config).
+  environment.variables = {
+    XCURSOR_THEME = "Bibata-Material-Beige";
+    XCURSOR_SIZE = "20";
+    DXVK_HUD = "compiler"; # live shader-compile counter, Steam and non-Steam Proton alike
+  };
+
   environment.systemPackages =
     with pkgs;
     [
