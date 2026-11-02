@@ -276,6 +276,9 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
+  # i2c devices for DDC/CI monitor brightness (ddcutil).
+  hardware.i2c.enable = true;
+
   # Enable sound.
   # services.pulseaudio.enable = true;
   # OR
@@ -296,8 +299,8 @@
     isNormalUser = true;
     extraGroups = [
       "wheel"
-      "root"
-    ]; # Enable ‘sudo’ for the user.
+      "i2c"
+    ];
     packages = with pkgs; [
       tree
       kdePackages.dolphin
@@ -363,6 +366,7 @@
       localsend
       pureref
 
+      ddcutil
       proton-cachyos_x86_64_v3
 
       # Test
