@@ -13,6 +13,9 @@ x-scheme-handler/tonsite=userapp-AyuGram Desktop-FRX272.desktop;userapp-AyuGram 
 x-scheme-handler/openchamber=openchamber.desktop;
 message/rfc822=userapp-Thunderbird-R4HBX3.desktop;
 
+x-scheme-handler/ror2mm=amethystmodmanager-ror2mm.desktop
+x-scheme-handler/modl=amethystmodmanager-modl.desktop
+x-scheme-handler/nxm=amethystmodmanager-nxm.desktop
 [Default Applications]
 application/pdf=org.pwmt.zathura.desktop
 application/x-extension-htm=firefox-nightly.desktop
@@ -97,3 +100,6 @@ audio/x-ape=mpv.desktop
 audio/x-tta=mpv.desktop
 audio/x-shorten=mpv.desktop
 audio/x-matroska=mpv.desktop
+x-scheme-handler/ror2mm=amethystmodmanager-ror2mm.desktop
+x-scheme-handler/modl=amethystmodmanager-modl.desktop
+x-scheme-handler/nxm=amethystmodmanager-nxm.desktop
