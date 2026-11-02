@@ -292,7 +292,9 @@
       pkgsi686Linux.mangohud
       (callPackage ./material-bibata-cursor.nix { })
       unzip
-      ouch
+      # ouch with unrar: nixpkgs disables RAR by default (non-free unRAR license).
+      # Enable after update of zip crate
+      # (ouch.override { enableUnfree = true; })
       duf
       topgrade
       cryptomator
