@@ -337,19 +337,29 @@
         buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.glib-networking ];
       }))
       inputs.neovim-nightly-overlay.packages.${stdenv.hostPlatform.system}.default
+      # openchamber-desktop disabled 2026-10-30: upstream mismatch inside their
+      # repo (their flake.lock says v2.2.1, their package.json wants 2.2.3).
+      # The eval check reads their committed flake.lock via readFile, so our
+      # follows override can't satisfy it. Re-enable after upstream bumps.
+      # inputs.openchamber.packages.${stdenv.hostPlatform.system}.openchamber-desktop
       inputs.helium.packages.${stdenv.hostPlatform.system}.default # helium browser (oxcl flake: repackaged upstream .deb, pinned hash)
+      inputs.amethyst.packages.${stdenv.hostPlatform.system}.default # Amethyst Mod Manager
+      inputs.rustowl.packages.${stdenv.hostPlatform.system}.default # rustowl
+      inputs.lazyflakes.packages.${stdenv.hostPlatform.system}.default # Lazyflakes test
+      inputs.fluxer.packages.${stdenv.hostPlatform.system}.default # Fluxer
+      (inputs.yazi.packages.${stdenv.hostPlatform.system}.default.override {
+        _7zz = pkgs._7zz-rar; # Support for RAR extraction
+      })
 
       # Nixpkgs
       jujutsu
       git
       wget
-      yazi
       vim
       firefox_nightly
       ghostty
       wl-clipboard
       btop
-      nerd-fonts.jetbrains-mono
       ripgrep
       bat
       starship
@@ -361,10 +371,8 @@
       kdePackages.kleopatra
       pinentry-curses
       nvd
-      steam-run
       xwayland-satellite
-      mangohud
-      pkgsi686Linux.mangohud
+      libgpg-error # stocks /run/current-system/sw/lib for the limusic-app wrapper
       (callPackage ./material-bibata-cursor.nix { })
       unzip
       # ouch with unrar: nixpkgs disables RAR by default (non-free unRAR license).
@@ -378,13 +386,26 @@
       libreoffice
       localsend
       pureref
-
       ddcutil
+      unrar
+      android-tools
+      rustdesk-flutter
+      mpv
+
+      # Fonts
+      nerd-fonts.jetbrains-mono # jetbrains-mono
+
+      # Gaming
       proton-cachyos_x86_64_v3
+      heroic
+      mangohud
+      pkgsi686Linux.mangohud
+      steam-run
 
       # Test
       oxker # lazydocker like tool
       gitlogue
+      alacritty
     ]
 
     # Dev tools (appended to the list above).
@@ -415,6 +436,7 @@
       statix # nix linter
       taplo # toml formatter (lua/plugins/lsp/toml.lua)
       tree-sitter # tree-sitter CLI: required by nvim-treesitter (:checkhealth)
+      rustup
     ];
 
   # Some programs need SUID wrappers, can be configured further or are
