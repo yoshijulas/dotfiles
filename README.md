@@ -6,17 +6,20 @@
 
 ### New
 
-- [Niri](https://github.com/niri-wm/niri)
+- [Umbriel](https://github.com/noctalia-dev/umbriel)
 - [Noctalia](https://github.com/noctalia-dev/noctalia)
 - [MangoHud](https://github.com/flightlessmango/MangoHud)
-- [omzsh](https://github.com/ohmyzsh/ohmyzsh)
+- [fish](https://github.com/fish-shell/fish-shell)
 - [btop](https://github.com/aristocratos/btop)
-- [foot](https://codeberg.org/dnkl/foot)
-- [Oniri](https://github.com/Antiz96/oniri)
 - [swayimg](https://github.com/artemsen/swayimg)
+- [ghostty](https://github.com/ghostty-org/ghostty)
 
 ## old
 
+- [foot](https://codeberg.org/dnkl/foot)
+- [Oniri](https://github.com/Antiz96/oniri)
+- [omzsh](https://github.com/ohmyzsh/ohmyzsh)
+- [Niri](https://github.com/niri-wm/niri)
 - [hyprland](https://github.com/hyprwm/Hyprland)/[hyprlock](https://github.com/hyprwm/hyprlock/)
 - [swaync](https://github.com/ErikReider/SwayNotificationCenter)
 - [waybar](https://github.com/Alexays/Waybar)
