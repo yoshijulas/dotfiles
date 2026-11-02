@@ -72,6 +72,54 @@
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
+  # Route all DNS through local blocky (Quad9 DoQ) — ignore DHCP DNS.
+  networking.networkmanager.dns = "none";
+  networking.nameservers = [
+    "127.0.0.1"
+    "::1"
+  ];
+
+  services.blocky = {
+    enable = true;
+    settings = {
+      ports.dns = [
+        "127.0.0.1:53"
+        "[::1]:53"
+      ];
+      upstreams = {
+        groups.default = [
+          "quic:dns.quad9.net"
+          "https://dns.quad9.net/dns-query"
+          # Fallback provider: answers when Quad9 is down (strict = parallel, fastest wins).
+          "https://one.one.one.one/dns-query"
+        ];
+        strategy = "strict";
+        timeout = "5s";
+      };
+
+      # Bootstrap for resolving dns.quad9.net itself.
+      bootstrapDns = [
+        { upstream = "9.9.9.9"; }
+        { upstream = "149.112.112.112"; }
+        { upstream = "2620:fe::fe"; }
+        { upstream = "2620:fe::9"; }
+        { upstream = "1.1.1.1"; }
+        { upstream = "1.0.0.1"; }
+      ];
+      caching = {
+        minTime = "5m";
+        maxTime = "30m";
+        prefetching = true;
+      };
+      dnssec = {
+        # Off (Oct 2026): validator SERVFAILs legit domains (lscr.io,
+        # index.docker.io, ghcr.io, nextdns.io) — dubious "bogus" verdicts
+        # with a correct clock. Re-enable if blocky/upstream fixes land.
+        validate = false;
+      };
+    };
+  };
+
 
   # Set your time zone.
   time.timeZone = "America/Mexico_City";
