@@ -20,6 +20,7 @@ $kotlin\
 $haskell\
 $python\
 [](fg:green bg:sapphire)\
+$nix_shell\
 $conda\
 [](fg:sapphire bg:lavender)\
 $time\
@@ -139,6 +140,11 @@ symbol = "  "
 style = "fg:crust bg:sapphire"
 format = '[$symbol$environment ]($style)'
 ignore_base = false
+
+[nix_shell]
+symbol = " "
+style = "fg:crust bg:sapphire"
+format = '[$symbol$state( \($name\)) ]($style)'
 
 [time]
 disabled = false
