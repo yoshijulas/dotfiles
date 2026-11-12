@@ -307,6 +307,9 @@
     ];
     shell = pkgs.fish;
   };
+  services.tailscale = {
+    enable = true;
+  };
 
   fonts.packages = with pkgs; [
     # Windows fonts
@@ -351,6 +354,10 @@
         _7zz = pkgs._7zz-rar; # Support for RAR extraction
       })
 
+      inputs.herdr.packages.${stdenv.hostPlatform.system}.herdr-tui # Herdr
+      inputs.herdr.packages.${stdenv.hostPlatform.system}.herdr-core # Herdr
+      inputs.herdr.packages.${stdenv.hostPlatform.system}.herdr # Herdr-app
+
       # Nixpkgs
       jujutsu
       git
@@ -391,6 +398,7 @@
       android-tools
       rustdesk-flutter
       mpv
+      zoxide
 
       # Fonts
       nerd-fonts.jetbrains-mono # jetbrains-mono
@@ -429,6 +437,7 @@
       nodejs # node + npm (nvim plugins, LSP servers, frontend)
       python3 # python (nvim plugins, scripts)
       uv # python project/package manager, replaces pip + venv
+      rustup
       # Helpers
       mise # polyglot version manager (node/python pinning per project)
       skills # skills.sh CLI: find/add/update agent skills
@@ -436,7 +445,8 @@
       statix # nix linter
       taplo # toml formatter (lua/plugins/lsp/toml.lua)
       tree-sitter # tree-sitter CLI: required by nvim-treesitter (:checkhealth)
-      rustup
+      bacon # rust background analyzer
+
     ];
 
   # Some programs need SUID wrappers, can be configured further or are
