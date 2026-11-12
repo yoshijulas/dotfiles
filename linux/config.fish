@@ -61,6 +61,7 @@ command -q zoxide; and zoxide init fish | source
 command -q mise; and mise activate fish | source
 command -q starship; and starship init fish | source
 command -q jj; and COMPLETE=fish jj | source
+source "/home/yoshi/.config/vite-plus/env.fish"
 
 # secrets live outside the repo in ~/.fish_secrets (never committed, fish syntax: set -gx VAR value)
 if test -f $HOME/.fish_secrets
